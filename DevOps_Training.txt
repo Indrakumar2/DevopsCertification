@@ -106,7 +106,7 @@ working:
 ------>Sprint Backlog : The above phenomenon is known as Sprint Planning, Leaders from the Software Development team would look at the backlog and Decide what will be
                          implemented in a given sprint.
 
-A Passing Sprint means that the items from the product backlog that's been intoduced in the sprint have been created, shipped and Deployed
+A Passing Sprint means that the items from the product backlog that's been introduced in the sprint have been created, shipped and Deployed
 
 A failing Sprint is one were not all works been done
 
@@ -417,7 +417,7 @@ Working Directory: it is local physical directory were changes can be done to th
 
 Staging area:  it is the place were the git keeps a reference of all modifications to be sent to the next commit
 
-Gir directory: it is the repository that stores all files in a compressed form
+Git directory: it is the repository that stores all files in a compressed form
   
 
 Untracked files resides only in the workiing directory ie, they don't reflect in the git directory
@@ -579,17 +579,251 @@ Tutorial need to be done
 
 
 
-  
 
-          
+Automation Testing Framework:
+
+  Overview:
+
+         What AT means?
+
+           Automation testiing is  an application software testing process using software tools to control the execution of tests
+           The actual test results are compared with the expected test results
+
+
+
+Manual Testing:
+
+It is a form of software testing in which test cases are run by a human rather than using an automated tool.
+
+The Mannual software testing can be summed as:
+
+Time-consuming to test all work flows, fields and bad cases
+
+Hectic for multilingual sites 
+
+Tedious and, as a result, prone to errors
+
+
+Automation testing can be summed as :
+
+Accelerates the execution of tests 
+
+Helps to increase the test coverage 
+
+Eliminates the need for human interference
+
+Test cases:
+ What test cases need to be automated?
+
+The criteria for the test cases, we should keep in our mind,
+
+Test cases are High risk and business critical
+
+Test cases are Executed Repeatedly
+
+They are very monotonous or exhausting to perform manually and those which takes laborious time
+
+Important to note that Automation testing is not appropriate to use in the test cases:
+
+That are ewly designed and have never been manually executed at least once
+Test cases whose requirements change frequently
+Test cases whose executedin ad-hoc situations
+
+
+Automation testing process and its popular tools:
+
+Determine the scope automation
+
+Test automation tool selection
+
+Test planning, design & developement
+
+Test Execution
+
+Test automation management
+
+
+
+Determine the scope of automation:
+The specific area of your application software that will be automated
+
+Guidlines to assess scope:
+
+Empirical(based on experiments and practical experience, not on ideas.)features that are essential for application software
+Larger data involvement scenarios of the application software
+Identical functionalities shared by the application software products          
+The technical feasibility of the appication software
+
+Test Automation Tool selection:
+It maybe necessary to evaluate the project specifications attentively by using the scope of automation, the right selection of automation tools, testing processes and teams 
+is important for successful automation
+
+
+Test Planning, Design and Developement:
+Once setup an automation strategic framework using this stage and incorporate relevant information such as the selection of automation tools as per the requirement such as,
+
+Selection of automation tools as per requirements 
+Framework designs and their characteristics
+The automation components that are in & out of scope
+The preparation of an automated testbed
+Schedule and Timeline of scripting and execution
+
+
+Test Execution:
+
+The automation scripts require input test data, therefore it generates extensive test reports after execution
+Automation scripts are executed at this juncture.Before they may be set to execute, the scripts require input test data,Therefore it generates extensive test reports after 
+execution
+the automation tool can be used directly or the test management tool can activate the automation tool
+
+
+Test Automation Management:
+
+It is an approach is a phase of automation testing that is used to see if the new feature added to the software are working properly.
+When new automation scripts are added they must be renewed and maintained to  improve the effectiveness of the automation scripts with each release cycle
+
+
+Tools in Automation:
+
+'Ranorex' studio is a one-stop solution for automation fuctional user interface tests, regression tests, driven tests, and more
+'Testim' is the qucikest way to create durable end-to-end tests, whether theyare codeless, programmed or both .It not only allows to write incredibly stable codeless tests,
+That the leverage our AI, but it also gives the option to export test as code
+'Lamdatest' is used to perform automated  cross-browser testing.They provide a selnium grid that is ultra fast,Scalable and secure allowing customers to conduct tests on
+over 2000 browsers and operating systems
+'Selelinum', is a software testing tool that's used to perform regression testing.Its a open source regression testing tool that includes playback recording capabilities
+
+
+Selenium:
+
+It is an umbrella project that includes a set of tools and libraries that enable and support web browser automation
+
+
+Features of selenium :
+
+It's a opensource, portable framework used to automate the web applications testing
+It's highly flexible when it's come to testing functional & regression testcases
+It also Supports cross browsing where the test cases run across various platforms simultaneously
+Helps on creating robust, browserbased regression automation suites and perform automation test execution
+
+Selenium Webdriver Architecture:
+It is the most Significant component of the selenium tool suite
+
+The test script can be written in any if the supported programming languages and run directly in most contempary web browsers using webdriver, includes such as C#, JAVA, Perl, PHP,Phython, Ruby and many others.
+  The selenium webdriver is currnetly in the rise with Java and C#
+
+The architecture layout of selenium web driver which is categorized into four main components:
+Selenium language bindings also Selenium client libraries-------json wire protocol------Browser drivers------real browsers
+
+The HTTP server, undertake the responsibilty to bridge communication b/w browser driver and real browser.
+
+
+
+Selenium Language Bindings: It has language binaries or selenium client libraries to support multiple languages. For instance, when we want to access the browser driver 
+in java by using the java bindings
+
+JSON Wire Protocol: JSON is a web based data exchange standard. This manages data structures,such as objects and arrays. In a Nutshell Writting and reading data from JSON is Simple.
+The JSON Wire protocol is data exchange that commuicates b/w a server and a client
+
+Browser Drivers: Selenium uses exclusive drivers for each browser in establishing a safe connection with the browser without comprising the internal logic of the browser functionalities.
+
+Real Browser: Selenium Webdriver is compatible with the major browser to arrange podium to the web application for testing such as internet explorer, mozilla firefox,Google chrome, safari etc.,
+
+
+
+
+Configuration Management:
+
+It is a system engineering method that ensures a product's characteristics remain consistent during its life cycle
+
+It provides a configuration model of the services, assets,and infrastructure by recording the relationship b/w service assets & configuration items, it also ensures that the release in a controlled environments and operational use are
+completed on the basis of former approvals.
+
+It may cover Non-IT assets and work products used to develop services and configuartion items are required to support services that aren't listed as assets
+
+Any change in configuartion can dramatically impact : the performance ,the security, the functionality of the code in the underlying of the IT assets
+
+Any component that requires management to deliver IT service is considered part of scope of the configuration management, this process maintains information about any CI
+ required to deliver an IT Service, including its relationship and this information is managed throughout lifecycle of the CI
+
+So, the objective of configuration management is to define and control the components of the IT service and its infrastructure, and to maintain accurate configuration information
+
+The Configuration Management application : identifies, defines and tracks an organization's configuration items (CI) by creating and managing records for those items
+
+other service management applications can then access these records  from central repository
+
+Eg:If we are creating an incident, you can take all the data related to hardware components from configuration management. Next, we can use the same information to create
+a new incident. Access to configuartion management significantly reduces the time spent to reslove the incident and alerts us to other future risks triggered by other 
+component relationships and dependencies defined in the database
+
+Roles of Configuration Management Tools:
+
+Configuration management tools enabled changes and deployments to be faster, repeatable, scalable, predictable, and able to maintain the desired state, which brings controlled
+assests into an expected states.
+
+Advantages:
+
+It helps to increase the efficency with a well defined configuration process that improves visibility and provides control with the help of tracking
+
+It helps in cost optimization by having a detailed knowledge of all the IT Elements of the configuration, which helps to avoid unnecessary duplication 
+
+Track requirements from specification to testing
+
+Identifies and control the software versions
+
+It enhances system and process reliability and correcting the incorrect configurations before a detrimental effect on results
+
+It manages the information about the configuration items
+
+It provides faster restoration of your service if process failure occurs
+
+Facilitates the conduct of functional configuration audits 
 
 
 
 
 
+Popular Configuration management Tools:
+
+Saltstack, Ansible, Chef, Puppet
+
+Saltstack----->It is a python based open-souce configuartion management tool used to remotely manage configuration items
+
+Ansible------->It is also python based CM tool, also considered as agentless CM tool
+
+Chef-------->It is a ruby based CM Tool having integartion with most of the cloud-based platforms
+
+Puppet------> Ruby DSL-based CM tool used for managing software,systems, and network configuration items
 
 
+Ansible Overview:
+ It's an IT automation engine that automates the cloud provisioning, configuration management , application deployment, Intra service orchestration and a variety of IT tasks
 
+Ansible was built from the ground up for multitier deployments, and instead of controlling one system at a time it models the IT Architecture by defining how all of the systems interact
+
+Ansible uses playbook to describe automation jobs which are written in YAML-it is a human readable data serialization language mainly used for configuration files
+
+Ansible was designed for multi-tier deployment
+
+Ansible models the IT infrastructure by interrelating all the systems
+
+It was constructed for multi-level use from the ground up
+
+
+Components of Ansible: 
+
+Modules, Module Utilities, Plugins, Inventory, playbooks, the Ansible search path
+
+Modules: Ansible connects nodes and sends scripts known as Ansible Modules
+         User can write their own modules 
+         Most module accept parameters that define the systems desired state.
+Ansible runs these modules by default over ssh and removes them after when they finished
+The module library can be stored on any computer and no servers, daemons or databases needed.
+
+Module Utilities: Ansible stores functions as modules utilites when several modules use the same code, to reduce duplication and maintainance. However only python or powershell can be 
+used to build module utilities
+
+
+Plugins: Ansible's core fuctionality is augumented by plugins. Plugins execute on the control mode within the /user/bin/ansible method, While modules execute on the target system in separate processes usually on remote system
 
 
 
