@@ -823,9 +823,83 @@ Module Utilities: Ansible stores functions as modules utilites when several modu
 used to build module utilities
 
 
-Plugins: Ansible's core fuctionality is augumented by plugins. Plugins execute on the control mode within the /user/bin/ansible method, While modules execute on the target system in separate processes usually on remote system
+Plugins: Ansible's core fuctionality is augumented by plugins. Plugins execute on the control mode within the /user/bin/ansible method, While modules execute on the target system in separate processes usually on a remote system. Ansible usually comes with many useful plugins and can also be created
+
+Inventory: It is a configurtion file where user defines the host information
+
+           It is a text file that contains a list of servers or nodes that the user manages and configures. Usually the servers are listed based on their hostnames or ip-addresses.
+
+Playbooks: It is a blueprint for automation tasks, which are complex IT tasks with no human intervention
+
+           The Ansible playbooks are simply frameworks, or pre-written codes, that developers can use a startingpoint. IT infrastructures, networks, security systems, and developer personas are all routinely automated using ansible playbooks 
+             The scripts or instructions are written in yaml format
 
 
+Anisble search path: Modules, module utilities, plugins, playbooks, and tasks can all be stored in different locations.
+                     Several files with the similar or identical names in different locations can be available on the ansible control node, if own code will be written to expand ansible's core features
+                      On, any given playbook run, the search path decides which of these files Ansible can find and use.
+
+
+
+
+
+
+
+YAML Scripting: It is simple for humans to read write than other popular data formats like XML, JSON.Further thare are libraries available in most programming languages for working with yaml, hence Ansible uses it to express ansible playbooks.
+
+For ansible, each yaml file begins with a list of items.
+
+Each item in the list is a key or value pair list, also known as a hash or directory, so need to know how to write dictionaries and lists in YAML
+
+Every YAML file optionally starts with --- (3- dashes) and ends with ...(3-dots)
+
+Rules for creating YAML file:
+Yaml is case sensitive.
+
+The file should have .yaml extension.
+
+Yaml does not allow use of tabs while creating YAML file; Spaces are allowed instead 
+
+
+
+Terraform Overview:
+
+It is a tool for building, changing and versioning an infrastructure safely and efficiently. Terraform can manage existing and popular service provider as well as custom inhouse solutions.
+Configuration files describe to terraform the components needed to run a single application or the entire datacentre
+Terraform generates an execution plan describing what it will do the desired state and then executes it to build the described infrastructure
+
+Key features:
+
+Infrastructure as code-----> it is described using a High level configuration syntax,
+                             This allows a blueprint of your datacenter to be versioned  and treated as would any other code
+                             Additionally infrastructure can be shared and reused
+
+As the configuartion in the terraform can be determined what has changed and develop incremental implementation plan
+
+The infrastructure in terraform can manage-----> lowlevel components such as : compute instances, storage & networking
+                                                 Highlevel components such as: DNS Entry, SaaS features etc.,
+
+
+Execution plans: Terraform has  planning step where it generates and execution plan, it shows what Terraform will do when we call apply.
+                 This lets to prevent unexpected manipulation of terraform infrastructure.
+
+
+Resource Graph: Terraform builds a graph of all resources which parallelizes of creation & modification of any non-dependent resource, because of this terraform builds the infrastructure as efficiently as possible and operates can get inside the dependencies in their own infrastructure
+
+Change Automation: Complex change sets can be applied to the infrastructure with minimal human interaction, with the previously, mentioned execution plan & resources graph we can know exactly what terraform will change in what order avoiding many possible human errors
+
+
+
+
+Containerization with Docker
+
+overview: 
+
+ Container: A container is a piece of software that packages code and all of its dependencies
+
+Containerization is defined as the form of os virtualization through which applications run in a isolated user space called containers 
+
+           
 
 
 
