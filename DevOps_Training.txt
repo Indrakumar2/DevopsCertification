@@ -897,12 +897,86 @@ overview:
 
  Container: A container is a piece of software that packages code and all of its dependencies
 
-Containerization is defined as the form of os virtualization through which applications run in a isolated user space called containers 
+Containerization is defined as the form of os virtualization through which applications run in a isolated user space called containers, all using the same shared os
 
+Benefits:
+
+Portability----> A container separates applications from their host os, allowing them  to perform soomthly in any platform or cloud, that is write once run anywhere.
+
+Scalability----> A container application with the service oriented design can handle growing workloads, resulting in increased application sclability.
+
+Faster Developement------> A conatiner can establish a master  version of the image that can be easily deployed on demand resulting in increased appproductivity.
+
+High Productivity-----> Conatiners allows developers to track and make changes to the platforms source code.
+
+Enhanced Security-----> Containerization also increases security since containers adhere to app separation mechanism,making them more secure
+
+Continuity---------> It provides continuity because containers run separately,Therefore the failure of one does not affect the other containers
+
+
+Virtualization: It allows to run different operating systems on the same physical server's hardware
+
+It uses a software that creates an abstracted layer over computer layer hardware that allows hardware elements of a single computer, processors, memory, storage and more can be divided in to multiple virtual computers commonly called Virtual machines VM's.Each VM's runs its own operating system and behaves like an invdividual computer even though is running in the small portion of actual computer
+
+Virtualization VS Containerization:
+
+                            Virtualization                                                     Containerization
+
+                   It uses fundamental elements as the VM's                                 It uses Fundamental unit as containers 
+
+                   It allows to runn several os on a physical server's                   It allows to deploy numerous applications on the same server using the same os 
+                   hardware.   
+              
+                   It replicates the real hardware, such as CPU Cores, RAM, and           It is OS-Level Virtualization and it isn't the replica of the physical 
+                   represents it as a Separate system                                     machine
+
+                   Virtualization is a heavy weight operation that consumes a              Light weight operation
+                   lot of resources
+ 
+                   It provides complete isolation from the host os and other VM's          Containerization provides light weight isolation from the host and other
+                                                                                            containers but it doesn't provides stronger security as a VM
+
+                   VM's have their own OS                                                   Containers uses the host os and share them
+                
+                   Virtulization has a starting time in minutes and allows for slow         Containerization has a startup time in milliseconds and allows for faster                      provisioning                                                              provisioning     
+
+                    Virtualization is not portable                                          Conatinerization is portable
+
+Overview : Docker is popular containerization platform for packaging your application along with all of it's dependencies
+           Docker keywords are Developed------> Shipped ------>run everywhere
+
+
+Docker Platform: It is a feature provided by docker to manage the lifecycle of containers 
+
+                 It provides ability to package and run applications in a loosely isolated environment called a container, and to manage the lifecycle of the                  container,it provides tooling and platform   
            
+Uses of docker platform: 
+  Development: Containers can be used to develop ypur applications and its supporting components.
+  Testing:     The application becomes distributed and tested using container.
+  Deployment:   When the code is ready, deploy the application as a container or an orchestrated service in your production environment.
+  
+
+Advantages:
+
+Docker provides at various stages of the software development lifecycle
+   Build: By Dockerizing an app into a single or several modules, Developer team can save time, effort and money.
+   Test: Test engineers may test each conatinerized applications or its components, individually with docker without affecting the other parts of the program
+   Deploy and Maintain: Docker helps teams collabrate more effectively by ensuring that the same versions of libraries and packages are utilized throughout the                         development process.Futher more, deploying a previously tested container prevents bugs in the bulid process, allowing for a smooth transition                         to production.
 
 
+Features:
 
+Scalable---->Docker containers are particularly scalable due to their light weight nature.
+It is allows to configure the system quickly and efficiently.
+It allows us to deploy our work loads in less time and less effort.
+Its able to reduce the size of the development by delivering a smaller opearting system footprint via conatiner
+Increases productivity, simlply it makes technical configureration and application deployment  easier
+It provides business benefit  by decreasing the infrastructure and mainatainance expenses of existing application portfolio also increasing the time to market for new solutions
+It allows to run the applications in the secured environment and each container is independent and able to run any type of applications
+It contains swarm as a tool to scheduling and clustering docker containers, it's frontnd is the docker api which allows us to control it with a vareity of tools it also allows us to manage a varity of docker hosts as if they were single virtual host, its a self organised collection of engine that makes plugable backends possible
+incoming requests for 
+
+ 
 
 
 
