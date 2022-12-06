@@ -100,7 +100,8 @@ by rapid delivery of the working software product.
 It breaks the product into small incremental builds,these builds are provided in iterations
 
 working:
------>Product Backlog : it is pretty much all the things that the business wants to get from the software development team. Product backlog may have an infinite number of items, but need to decide what we are going to work on in a given period of software development.
+----->Product Backlog : it is pretty much all the things that the business wants to get from the software development team. 
+Product backlog may have an infinite number of items, but need to decide what we are going to work on in a given period of software development.
 
 ------>Sprint Backlog : The above phenomenon is known as Sprint Planning, Leaders from the Software Development team would look at the backlog 
 and Decide what will be implemented in a given sprint.
@@ -262,7 +263,7 @@ Version Control System:
 
 If a project consist of Technical concepts, Collabration b/w different team members, Frequent changes.
 
-A Version control system allows users to keep track of the changes in the software developement projects and enables them to collaborate on thode projecys
+A Version control system allows users to keep track of the changes in the software developement projects and enables them to collaborate on the projects
 
 Purpose:
 
@@ -319,7 +320,7 @@ Local Version control System: It maintains the track on files within the local s
 
 Centralised Version Control System: It uses Centralized server to store the files and all the changes in the files are also tracked under the centalized server
 
-                                    This centralized server also includes all the information of version files and list of clients that checkout files from that central place
+          This centralized server also includes all the information of version files and list of clients that checkout files from that central place
 
 Distributed Version Control System: It moves from the client-server approach of the centralized version control system to a peer to peer approach
                                      
@@ -507,15 +508,15 @@ It uses cron style syntax for scheduling the jobs
 
  
 notations: 
-             '*' --------> represents all possible values for a field  ------- means  once a minute
+           '*' --------> represents all possible values for a field  ------- means  once a minute
    
-              'M-N' -------> Defines the ranges --------- 1-5 in the DOW field would mean monday to friday
+           'M-N' -------> Defines the ranges --------- 1-5 in the DOW field would mean monday to friday
 
-               '/' -------> Defines skips through the ranges ------- */15 in the MINUTE field would mean every 15 minutes
+           '/' -------> Defines skips through the ranges ------- */15 in the MINUTE field would mean every 15 minutes
 
-               Comma separated List -------> indicates a list of  valid values ------- 15,45 in the minute field would means at 15 and 45 minutes past evry hour
+           Comma separated List -------> indicates a list of  valid values ------- 15,45 in the minute field would means at 15 and 45 minutes past evry hour
 
-               Shorthand values                                                  -------- @yearly, @weekly, @Daily, @annualy, @daily, @midnight, and @hourly
+           Shorthand values  -------- @yearly, @weekly, @Daily, @annualy, @daily, @midnight, and @hourly
 
 
 
@@ -650,7 +651,8 @@ the right selection of automation tools, testing processes and teams is importan
 
 
 Test Planning, Design and Developement:
-Once setup an automation strategic framework using this stage and incorporate relevant information such as the selection of automation tools as per the requirement such as,
+Once setup an automation strategic framework using this stage and incorporate relevant information such as 
+the selection of automation tools as per the requirement such as,
 
 Selection of automation tools as per requirements 
 Framework designs and their characteristics
@@ -701,7 +703,8 @@ Helps on creating robust, browserbased regression automation suites and perform 
 Selenium Webdriver Architecture:
 It is the most Significant component of the selenium tool suite
 
-The test script can be written in any if the supported programming languages and run directly in most contempary web browsers using webdriver, includes such as C#, JAVA, Perl, PHP,Phython, Ruby and many others.
+The test script can be written in any if the supported programming languages and run directly in most contempary web browsers 
+using webdriver, includes such as C#, JAVA, Perl, PHP,Phython, Ruby and many others.
   The selenium webdriver is currnetly in the rise with Java and C#
 
 The architecture layout of selenium web driver which is categorized into four main components:
@@ -711,15 +714,19 @@ The HTTP server, undertake the responsibilty to bridge communication b/w browser
 
 
 
-Selenium Language Bindings: It has language binaries or selenium client libraries to support multiple languages. For instance, when we want to access the browser driver 
-in java by using the java bindings
+Selenium Language Bindings: It has language binaries or selenium client libraries to support multiple languages. 
+For instance, when we want to access the browser driver in java by using the java bindings
 
-JSON Wire Protocol: JSON is a web based data exchange standard. This manages data structures,such as objects and arrays. In a Nutshell Writting and reading data from JSON is Simple.
+JSON Wire Protocol: JSON is a web based data exchange standard. This manages data structures,such as objects and arrays. 
+In a Nutshell Writting and reading data from JSON is Simple.
+
 The JSON Wire protocol is data exchange that commuicates b/w a server and a client
 
-Browser Drivers: Selenium uses exclusive drivers for each browser in establishing a safe connection with the browser without comprising the internal logic of the browser functionalities.
+Browser Drivers: Selenium uses exclusive drivers for each browser in establishing a safe connection with 
+the browser without comprising the internal logic of the browser functionalities.
 
-Real Browser: Selenium Webdriver is compatible with the major browser to arrange podium to the web application for testing such as internet explorer, mozilla firefox,Google chrome, safari etc.,
+Real Browser: Selenium Webdriver is compatible with the major browser to arrange podium to the web 
+application for testing such as internet explorer, mozilla firefox,Google chrome, safari etc.,
 
 
 
@@ -729,7 +736,8 @@ Configuration Management:
 It is a system engineering method that ensures a product's characteristics remain consistent during its life cycle
 
 It provides a configuration model of the services, assets,and infrastructure 
-by recording the relationship b/w service assets & configuration items, it also ensures that the release in a controlled environments and operational use are
+by recording the relationship b/w service assets & configuration items, it also ensures 
+that the release in a controlled environments and operational use are
 completed on the basis of former approvals.
 
 It may cover Non-IT assets and work products used to develop services and configuartion items are required to support services that aren't listed as assets
@@ -755,14 +763,15 @@ component relationships and dependencies defined in the database
 
 Roles of Configuration Management Tools:
 
-Configuration management tools enabled changes and deployments to be faster, repeatable, scalable, predictable, and able to maintain the desired state, which brings controlled
-assests into an expected states.
+Configuration management tools enabled changes and deployments to be faster, repeatable, scalable, predictable, 
+and able to maintain the desired state, which brings controlled assests into an expected states.
 
 Advantages:
 
 It helps to increase the efficency with a well defined configuration process that improves visibility and provides control with the help of tracking
 
-It helps in cost optimization by having a detailed knowledge of all the IT Elements of the configuration, which helps to avoid unnecessary duplication 
+It helps in cost optimization by having a detailed knowledge of all the IT Elements of the configuration, 
+which helps to avoid unnecessary duplication 
 
 Track requirements from specification to testing
 
@@ -825,7 +834,8 @@ to reduce duplication and maintainance. However only python or powershell can be
 
 
 Plugins: Ansible's core fuctionality is augumented by plugins. Plugins execute on the control mode within 
-the /user/bin/ansible method, While modules execute on the target system in separate processes usually on a remote system. Ansible usually comes with many useful plugins and can also be created
+the /user/bin/ansible method, While modules execute on the target system in separate processes usually on a remote system. 
+Ansible usually comes with many useful plugins and can also be created
 
 Inventory: It is a configurtion file where user defines the host information
 
@@ -834,17 +844,13 @@ are listed based on their hostnames or ip-addresses.
 
 Playbooks: It is a blueprint for automation tasks, which are complex IT tasks with no human intervention
 The Ansible playbooks are simply frameworks, or pre-written codes, that developers can use a startingpoint. IT infrastructures, networks, security systems, and developer personas are all routinely automated using ansible playbooks 
-             The scripts or instructions are written in yaml format
+The scripts or instructions are written in yaml format
 
 
 Anisble search path: Modules, module utilities, plugins, playbooks, and tasks can all be stored in different locations.
-Several files with the similar or identical names in different locations can be available on the ansible control node, if own code will be written to expand ansible's core features
+Several files with the similar or identical names in different locations can be available on the ansible control node, 
+if own code will be written to expand ansible's core features
 On, any given playbook run, the search path decides which of these files Ansible can find and use.
-
-
-
-
-
 
 
 YAML Scripting: It is simple for humans to read write than other popular data formats like XML, JSON.Further thare are libraries available in most programming languages for working with yaml, hence Ansible uses it to express ansible playbooks.
@@ -887,7 +893,8 @@ Execution plans: Terraform has  planning step where it generates and execution p
 
 
 Resource Graph: Terraform builds a graph of all resources which parallelizes of creation & modification of 
-any non-dependent resource, because of this terraform builds the infrastructure as efficiently as possible and operates can get inside the dependencies in their own infrastructure
+any non-dependent resource, because of this terraform builds the infrastructure as efficiently as possible and 
+operates can get inside the dependencies in their own infrastructure
 
 Change Automation: Complex change sets can be applied to the infrastructure with minimal human interaction, with the previously, 
 mentioned execution plan & resources graph we can know exactly what terraform will change in what order avoiding many possible human errors
@@ -927,28 +934,27 @@ single computer, processors, memory, storage and more can be divided in to multi
 Each VM's runs its own operating system and behaves like an invdividual computer even though is running in the small portion of actual computer
 
 Virtualization VS Containerization:
+                  Virtualization                                                     Containerization
 
-                            Virtualization                                                     Containerization
+       It uses fundamental elements as the VM's                                 It uses Fundamental unit as containers 
 
-                   It uses fundamental elements as the VM's                                 It uses Fundamental unit as containers 
-
-                   It allows to runn several os on a physical server's                   It allows to deploy numerous applications on the same server using the same os 
-                   hardware.   
+      It allows to runn several os on a physical server's                       It allows to deploy numerous applications on the same server using the same os 
+      hardware.   
               
-                   It replicates the real hardware, such as CPU Cores, RAM, and           It is OS-Level Virtualization and it isn't the replica of the physical 
-                   represents it as a Separate system                                     machine
+      It replicates the real hardware, such as CPU Cores, RAM, and             It is OS-Level Virtualization and it isn't the replica of the physical 
+      represents it as a Separate system                                        machine
 
-                   Virtualization is a heavy weight operation that consumes a              Light weight operation
-                   lot of resources
+      Virtualization is a heavy weight operation that consumes a              Light weight operation
+      lot of resources
  
-                   It provides complete isolation from the host os and other VM's          Containerization provides light weight isolation from the host and other
-                                                                                            containers but it doesn't provides stronger security as a VM
+      It provides complete isolation from the host os and other VM's          Containerization provides light weight isolation from the host and other
+                                                                              containers but it doesn't provides stronger security as a VM
 
-                   VM's have their own OS                                                   Containers uses the host os and share them
+      VM's have their own OS                                                   Containers uses the host os and share them
                 
-                   Virtulization has a starting time in minutes and allows for slow         Containerization has a startup time in milliseconds and allows for faster                      provisioning                                                              provisioning     
+      Virtulization has a starting time in minutes and allows for slow         Containerization has a startup time in milliseconds and allows for faster                  provisioning                                                             provisioning     
 
-                    Virtualization is not portable                                          Conatinerization is portable
+       Virtualization is not portable                                          Conatinerization is portable
 
 Overview : Docker is popular containerization platform for packaging your application along with all of it's dependencies
            Docker keywords are Developed------> Shipped ------>run everywhere
@@ -969,7 +975,7 @@ Advantages:
 Docker provides at various stages of the software development lifecycle
    Build: By Dockerizing an app into a single or several modules, Developer team can save time, effort and money.
    Test: Test engineers may test each conatinerized applications or its components, individually with docker without affecting the other parts of the program
-   Deploy and Maintain: Docker helps teams collabrate more effectively by ensuring that the same versions of libraries and packages are utilized throughout the                         development process.Futher more, deploying a previously tested container prevents bugs in the bulid process, allowing for a smooth transition                         to production.
+   Deploy and Maintain: Docker helps teams collabrate more effectively by ensuring that the same versions of libraries and packages are utilized throughout the             development process.Futher more, deploying a previously tested container prevents bugs in the bulid process, allowing for a smooth transition to production.
 
 
 Features:
