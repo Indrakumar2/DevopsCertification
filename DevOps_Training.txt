@@ -100,18 +100,17 @@ by rapid delivery of the working software product.
 It breaks the product into small incremental builds,these builds are provided in iterations
 
 working:
------>Product Backlog : it is pretty much all the things that the business wants to get from the software development team
-                        Product backlog may have an infinite number of items, but need to decide what we are going to work on in a given period of software development.
+----->Product Backlog : it is pretty much all the things that the business wants to get from the software development team. Product backlog may have an infinite number of items, but need to decide what we are going to work on in a given period of software development.
 
------->Sprint Backlog : The above phenomenon is known as Sprint Planning, Leaders from the Software Development team would look at the backlog and Decide what will be
-                         implemented in a given sprint.
+------>Sprint Backlog : The above phenomenon is known as Sprint Planning, Leaders from the Software Development team would look at the backlog 
+and Decide what will be implemented in a given sprint.
 
 A Passing Sprint means that the items from the product backlog that's been introduced in the sprint have been created, shipped and Deployed
 
 A failing Sprint is one were not all works been done
 
-irrespective of the sprints pass or fail most companies have reterespective on all sprints were things that worked and things that didn't work are dicussed  along with figuring out
-to improve the process
+irrespective of the sprints pass or fail most companies have reterespective on all sprints were things that 
+worked and things that didn't work are dicussed  along with figuring out to improve the process
 
 the Scrum team will do plan, Develop, test during the sprint that usually b/w 4-weeks, the scrum team will meet daily, disscusing in the progress of the project
 
@@ -158,25 +157,16 @@ Lifecycle
 ---> Continous developement[Manifests planning and coding, The scope of the project is determined during the planning and developers bulid the code]
                
 
-
-              ---> Continous Testing[in this phase teh code has been rigoursly tested for bugs,Here entire testing is automated, Jenkins assist in conducting automation of test procedure so that it saves a lot of time]
+---> Continous Testing[in this phase teh code has been rigoursly tested for bugs,Here entire testing is automated, Jenkins assist in conducting automation of test procedure so that it saves a lot of time]
                             
-
-
-                              -----> Continous integration[it's the essential phase of DevOps, which deals with the software development. Frequent changes are made to the code
-                                                                Building code not only involves complilation but it also includes, UNIT TESTING, INTEGARTION TESTING,CODE REVIEW, CODE PACKAGING]
+-----> Continous integration[it's the essential phase of DevOps, which deals with the software development. Frequent changes are made to the code
+                             Building code not only involves complilation but it also includes, UNIT TESTING, INTEGARTION TESTING,CODE REVIEW, CODE PACKAGING]
  
+------>Continous Deployment[the new code is deployed frequently and  the configuration management tools are required to achive
+Contiainerization also plays a pivtol role in the deployment process These tools helps to maintain consistency throughout ---->development-----staging----testing----production]
 
 
-                                          
-                                         ------>Continous Deployment[the new code is deployed frequently and  the configuration management tools are required to achive
-                                                                            Contiainerization also plays a pivtol role in the deployment process
-                                                                            These tools helps to maintain consistency throughout ---->development-----staging----testing----production]
-
-
-
-
-                                                            ------> Continous Monitoring[it includes all operational aspects,it maintains the security and availabilty of the service]
+------> Continous Monitoring[it includes all operational aspects,it maintains the security and availabilty of the service]
 
 
 
@@ -211,7 +201,9 @@ Monitoring:
 Nagios and Splunk,Amazon cloudwatch, grafana, datadog
 
 Containerization:
-It is defined as the form of operating system virtualization through which applications are run in isolated user spaces called containers, all using the same shared OS
+It is defined as the form of operating system virtualization through which applications are run in isolated user spaces called containers, 
+all using the same shared OS
+
 Docker and Kubernetes
 
 Benifits of Devops:
@@ -372,7 +364,8 @@ creates and manage remote repositories
 
 Git Repository:
 
-A git repository contains all of the projects files and each file revision history, this can be used for discussion and manage the projects work with in the repository
+A git repository contains all of the projects files and each file revision history, 
+this can be used for discussion and manage the projects work with in the repository
 
 
 Charcteristics :
@@ -422,17 +415,13 @@ Git directory: it is the repository that stores all files in a compressed form
 
 Untracked files resides only in the workiing directory ie, they don't reflect in the git directory
 
-Modified files resides in both working directory and git directory they have diffrent versions ie, the working directory files were changed, but those changes weren't sent to the staging area
+Modified files resides in both working directory and git directory they have diffrent versions ie, the working directory 
+files were changed, but those changes weren't sent to the staging area
 
-Staged files resides in the both working directory and git directory if they are existing files being changed or they don't reside in the git directory, ifthey are new file is being added to the respository for the first time
+Staged files resides in the both working directory and git directory if they are existing files being changed or they 
+don't reside in the git directory, ifthey are new file is being added to the respository for the first time
 
 Commited files resides on the both working directory and gir directory with the exact same version.
-
-
-
-
-
-
 
 
 CI/CD With Jenkins:
@@ -462,8 +451,8 @@ It can be integrated with limitless other applications and tools.
 
 Process of CI in Jenkins:
 
-All the commits are built-------Jenkins CI will check for the builds-------Once the build id fine, the executable code is ready for deployment--------Otherwise the team
-of developers who will commit changess at regular intervals are notified
+All the commits are built-------Jenkins CI will check for the builds-------Once the build id fine, the executable code is 
+ready for deployment--------Otherwise the team of developers who will commit changess at regular intervals are notified
 
 
 
@@ -544,8 +533,8 @@ Easy Integartion
 
 Maven:
 
-Maven is the bulid tool for managing software dependencies and life cycles.It automatically pulls code from a repository, compiles and packages it, and prepares it for 
-the next stage of developement
+Maven is the bulid tool for managing software dependencies and life cycles.It automatically pulls code from a repository, 
+compiles and packages it, and prepares it for the next stage of developement
 
 Tasks:
 It can easily create a project 
@@ -655,8 +644,8 @@ Identical functionalities shared by the application software products
 The technical feasibility of the appication software
 
 Test Automation Tool selection:
-It maybe necessary to evaluate the project specifications attentively by using the scope of automation, the right selection of automation tools, testing processes and teams 
-is important for successful automation
+It maybe necessary to evaluate the project specifications attentively by using the scope of automation, 
+the right selection of automation tools, testing processes and teams is important for successful automation
 
 
 Test Planning, Design and Developement:
@@ -742,18 +731,18 @@ It may cover Non-IT assets and work products used to develop services and config
 
 Any change in configuartion can dramatically impact : the performance ,the security, the functionality of the code in the underlying of the IT assets
 
-Any component that requires management to deliver IT service is considered part of scope of the configuration management, this process maintains information about any CI
- required to deliver an IT Service, including its relationship and this information is managed throughout lifecycle of the CI
+Any component that requires management to deliver IT service is considered part of scope of the configuration management, 
+this process maintains information about any CI required to deliver an IT Service, including its relationship and this information is managed throughout lifecycle of the CI
 
-So, the objective of configuration management is to define and control the components of the IT service and its infrastructure, and to maintain accurate configuration information
+So, the objective of configuration management is to define and control the components of the IT service and its infrastructure, 
+and to maintain accurate configuration information
 
 The Configuration Management application : identifies, defines and tracks an organization's configuration items (CI) by creating and managing records for those items
 
 other service management applications can then access these records  from central repository
 
-Eg:If we are creating an incident, you can take all the data related to hardware components from configuration management. Next, we can use the same information to create
-a new incident. Access to configuartion management significantly reduces the time spent to reslove the incident and alerts us to other future risks triggered by other 
-component relationships and dependencies defined in the database
+Eg:If we are creating an incident, you can take all the data related to hardware components from configuration management. Next, we can use the same information to create a new incident. Access to configuartion management significantly reduces the time spent to reslove the 
+incident and alerts us to other future risks triggered by other component relationships and dependencies defined in the database
 
 Roles of Configuration Management Tools:
 
