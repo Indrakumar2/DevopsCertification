@@ -478,7 +478,8 @@ It helps to transfer realtime data from one application to another and provide t
 
 Bulid Periodically:
 
-It builds the project periodically even if nothing has changed. It might have tests that shpuld be run periodically or a DB Clean up jenkins job or any other jenkins job.
+It builds the project periodically even if nothing has changed. It might have tests that 
+should be run periodically or a DB Clean up jenkins job or any other jenkins job.
 
 
 Scheduling Jenkins Job:
@@ -661,7 +662,8 @@ Schedule and Timeline of scripting and execution
 Test Execution:
 
 The automation scripts require input test data, therefore it generates extensive test reports after execution
-Automation scripts are executed at this juncture.Before they may be set to execute, the scripts require input test data,Therefore it generates extensive test reports after 
+Automation scripts are executed at this juncture.Before they may be set to execute, 
+the scripts require input test data,Therefore it generates extensive test reports after 
 execution
 the automation tool can be used directly or the test management tool can activate the automation tool
 
@@ -675,9 +677,11 @@ When new automation scripts are added they must be renewed and maintained to  im
 Tools in Automation:
 
 'Ranorex' studio is a one-stop solution for automation fuctional user interface tests, regression tests, driven tests, and more
-'Testim' is the qucikest way to create durable end-to-end tests, whether theyare codeless, programmed or both .It not only allows to write incredibly stable codeless tests,
+'Testim' is the qucikest way to create durable end-to-end tests, whether theyare codeless, 
+programmed or both .It not only allows to write incredibly stable codeless tests,
 That the leverage our AI, but it also gives the option to export test as code
-'Lamdatest' is used to perform automated  cross-browser testing.They provide a selnium grid that is ultra fast,Scalable and secure allowing customers to conduct tests on
+'Lamdatest' is used to perform automated  cross-browser testing.They provide a 
+selnium grid that is ultra fast,Scalable and secure allowing customers to conduct tests on
 over 2000 browsers and operating systems
 'Selelinum', is a software testing tool that's used to perform regression testing.Its a open source regression testing tool that includes playback recording capabilities
 
@@ -724,7 +728,8 @@ Configuration Management:
 
 It is a system engineering method that ensures a product's characteristics remain consistent during its life cycle
 
-It provides a configuration model of the services, assets,and infrastructure by recording the relationship b/w service assets & configuration items, it also ensures that the release in a controlled environments and operational use are
+It provides a configuration model of the services, assets,and infrastructure 
+by recording the relationship b/w service assets & configuration items, it also ensures that the release in a controlled environments and operational use are
 completed on the basis of former approvals.
 
 It may cover Non-IT assets and work products used to develop services and configuartion items are required to support services that aren't listed as assets
@@ -732,17 +737,21 @@ It may cover Non-IT assets and work products used to develop services and config
 Any change in configuartion can dramatically impact : the performance ,the security, the functionality of the code in the underlying of the IT assets
 
 Any component that requires management to deliver IT service is considered part of scope of the configuration management, 
-this process maintains information about any CI required to deliver an IT Service, including its relationship and this information is managed throughout lifecycle of the CI
+this process maintains information about any CI required to deliver an IT Service, 
+including its relationship and this information is managed throughout lifecycle of the CI
 
 So, the objective of configuration management is to define and control the components of the IT service and its infrastructure, 
 and to maintain accurate configuration information
 
-The Configuration Management application : identifies, defines and tracks an organization's configuration items (CI) by creating and managing records for those items
+The Configuration Management application : identifies, defines and tracks an 
+organization's configuration items (CI) by creating and managing records for those items
 
 other service management applications can then access these records  from central repository
 
-Eg:If we are creating an incident, you can take all the data related to hardware components from configuration management. Next, we can use the same information to create a new incident. Access to configuartion management significantly reduces the time spent to reslove the 
-incident and alerts us to other future risks triggered by other component relationships and dependencies defined in the database
+Eg:If we are creating an incident, you can take all the data related to hardware components from 
+configuration management. Next, we can use the same information to create a new incident. Access to configuartion 
+management significantly reduces the time spent to reslove the incident and alerts us to other future risks triggered by other 
+component relationships and dependencies defined in the database
 
 Roles of Configuration Management Tools:
 
@@ -785,11 +794,14 @@ Puppet------> Ruby DSL-based CM tool used for managing software,systems, and net
 
 
 Ansible Overview:
- It's an IT automation engine that automates the cloud provisioning, configuration management , application deployment, Intra service orchestration and a variety of IT tasks
+ It's an IT automation engine that automates the cloud provisioning, 
+configuration management , application deployment, Intra service orchestration and a variety of IT tasks
 
-Ansible was built from the ground up for multitier deployments, and instead of controlling one system at a time it models the IT Architecture by defining how all of the systems interact
+Ansible was built from the ground up for multitier deployments, 
+and instead of controlling one system at a time it models the IT Architecture by defining how all of the systems interact
 
-Ansible uses playbook to describe automation jobs which are written in YAML-it is a human readable data serialization language mainly used for configuration files
+Ansible uses playbook to describe automation jobs which are written in YAML-it is a human readable 
+data serialization language mainly used for configuration files
 
 Ansible was designed for multi-tier deployment
 
@@ -808,25 +820,26 @@ Modules: Ansible connects nodes and sends scripts known as Ansible Modules
 Ansible runs these modules by default over ssh and removes them after when they finished
 The module library can be stored on any computer and no servers, daemons or databases needed.
 
-Module Utilities: Ansible stores functions as modules utilites when several modules use the same code, to reduce duplication and maintainance. However only python or powershell can be 
-used to build module utilities
+Module Utilities: Ansible stores functions as modules utilites when several modules use the same code, 
+to reduce duplication and maintainance. However only python or powershell can be used to build module utilities
 
 
-Plugins: Ansible's core fuctionality is augumented by plugins. Plugins execute on the control mode within the /user/bin/ansible method, While modules execute on the target system in separate processes usually on a remote system. Ansible usually comes with many useful plugins and can also be created
+Plugins: Ansible's core fuctionality is augumented by plugins. Plugins execute on the control mode within 
+the /user/bin/ansible method, While modules execute on the target system in separate processes usually on a remote system. Ansible usually comes with many useful plugins and can also be created
 
 Inventory: It is a configurtion file where user defines the host information
 
-           It is a text file that contains a list of servers or nodes that the user manages and configures. Usually the servers are listed based on their hostnames or ip-addresses.
+           It is a text file that contains a list of servers or nodes that the user manages and configures. Usually the servers 
+are listed based on their hostnames or ip-addresses.
 
 Playbooks: It is a blueprint for automation tasks, which are complex IT tasks with no human intervention
-
-           The Ansible playbooks are simply frameworks, or pre-written codes, that developers can use a startingpoint. IT infrastructures, networks, security systems, and developer personas are all routinely automated using ansible playbooks 
+The Ansible playbooks are simply frameworks, or pre-written codes, that developers can use a startingpoint. IT infrastructures, networks, security systems, and developer personas are all routinely automated using ansible playbooks 
              The scripts or instructions are written in yaml format
 
 
 Anisble search path: Modules, module utilities, plugins, playbooks, and tasks can all be stored in different locations.
-                     Several files with the similar or identical names in different locations can be available on the ansible control node, if own code will be written to expand ansible's core features
-                      On, any given playbook run, the search path decides which of these files Ansible can find and use.
+Several files with the similar or identical names in different locations can be available on the ansible control node, if own code will be written to expand ansible's core features
+On, any given playbook run, the search path decides which of these files Ansible can find and use.
 
 
 
@@ -873,9 +886,11 @@ Execution plans: Terraform has  planning step where it generates and execution p
                  This lets to prevent unexpected manipulation of terraform infrastructure.
 
 
-Resource Graph: Terraform builds a graph of all resources which parallelizes of creation & modification of any non-dependent resource, because of this terraform builds the infrastructure as efficiently as possible and operates can get inside the dependencies in their own infrastructure
+Resource Graph: Terraform builds a graph of all resources which parallelizes of creation & modification of 
+any non-dependent resource, because of this terraform builds the infrastructure as efficiently as possible and operates can get inside the dependencies in their own infrastructure
 
-Change Automation: Complex change sets can be applied to the infrastructure with minimal human interaction, with the previously, mentioned execution plan & resources graph we can know exactly what terraform will change in what order avoiding many possible human errors
+Change Automation: Complex change sets can be applied to the infrastructure with minimal human interaction, with the previously, 
+mentioned execution plan & resources graph we can know exactly what terraform will change in what order avoiding many possible human errors
 
 
 
@@ -886,11 +901,13 @@ overview:
 
  Container: A container is a piece of software that packages code and all of its dependencies
 
-Containerization is defined as the form of os virtualization through which applications run in a isolated user space called containers, all using the same shared os
+Containerization is defined as the form of os virtualization through which applications run in a isolated user space called containers, 
+all using the same shared os
 
 Benefits:
 
-Portability----> A container separates applications from their host os, allowing them  to perform soomthly in any platform or cloud, that is write once run anywhere.
+Portability----> A container separates applications from their host os, allowing them  to perform soomthly in any platform or cloud, 
+that is write once run anywhere.
 
 Scalability----> A container application with the service oriented design can handle growing workloads, resulting in increased application sclability.
 
@@ -905,7 +922,9 @@ Continuity---------> It provides continuity because containers run separately,Th
 
 Virtualization: It allows to run different operating systems on the same physical server's hardware
 
-It uses a software that creates an abstracted layer over computer layer hardware that allows hardware elements of a single computer, processors, memory, storage and more can be divided in to multiple virtual computers commonly called Virtual machines VM's.Each VM's runs its own operating system and behaves like an invdividual computer even though is running in the small portion of actual computer
+It uses a software that creates an abstracted layer over computer layer hardware that allows hardware elements of a 
+single computer, processors, memory, storage and more can be divided in to multiple virtual computers commonly called Virtual machines VM's.
+Each VM's runs its own operating system and behaves like an invdividual computer even though is running in the small portion of actual computer
 
 Virtualization VS Containerization:
 
@@ -960,7 +979,8 @@ It is allows to configure the system quickly and efficiently.
 It allows us to deploy our work loads in less time and less effort.
 Its able to reduce the size of the development by delivering a smaller opearting system footprint via conatiner
 Increases productivity, simlply it makes technical configureration and application deployment  easier
-It provides business benefit  by decreasing the infrastructure and mainatainance expenses of existing application portfolio also increasing the time to market for new solutions
+It provides business benefit  by decreasing the infrastructure and mainatainance expenses of existing application portfolio also
+increasing the time to market for new solutions
 It allows to run the applications in the secured environment and each container is independent and able to run any type of applications
 It contains swarm as a tool to scheduling and clustering docker containers, it's frontnd is the docker api which allows us to control it with a vareity of tools it also allows us to manage a varity of docker hosts as if they were single virtual host, its a self organised collection of engine that makes plugable backends possible
 incoming requests for 
