@@ -952,7 +952,8 @@ Virtualization VS Containerization:
 
       VM's have their own OS                                                   Containers uses the host os and share them
                 
-      Virtulization has a starting time in minutes and allows for slow         Containerization has a startup time in milliseconds and allows for faster                  provisioning                                                             provisioning     
+     Virtulization has a starting time in minutes                              Containerization has a startup time in 
+     and allows for slow provisioning                                          milliseconds and allows for faster provisioning                                            
 
        Virtualization is not portable                                          Conatinerization is portable
 
