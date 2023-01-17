@@ -16,7 +16,7 @@ Daemons----->These are the background services that either start up during the b
              These Daemons are responsible for managing many parts of the system like, log information, watching for the devices that are inserted or removed & managing the user login.
 
 
-Graphical Server----->It is refered to as X-server. It render images and shapes on a computet monitor.
+Graphical Server----->It is refered to as X-server. It render images and shapes on a computer monitor.
 
 Desktop Environment----->The component with which the users interact the most and includes built-in applications.
 
@@ -393,8 +393,9 @@ Each repository has 2GB size limit , but it is recommended  to keep the reposito
 
 Life cycle of git:
 
-Repository ------> clone Operation ----->working copy-----> Modify the working copy(Upadate the other developer files in the working copy[status differnce operation])------>review the changes (Commit and push changes)
------->Commit changes [push operation][amend and push operation]------>Fix Mistakes [Push the changes]
+Repository ------> clone Operation ----->working copy-----> Modify the working copy(Upadate the other developer files 
+in the working copy[status differnce operation])------>review the changes (Commit and push changes)------>Commit changes [push operation][
+amend and push operation]------>Fix Mistakes [Push the changes]
 
 
 Git stages 
@@ -685,7 +686,8 @@ That the leverage our AI, but it also gives the option to export test as code
 'Lamdatest' is used to perform automated  cross-browser testing.They provide a 
 selnium grid that is ultra fast,Scalable and secure allowing customers to conduct tests on
 over 2000 browsers and operating systems
-'Selelinum', is a software testing tool that's used to perform regression testing.Its a open source regression testing tool that includes playback recording capabilities
+'Selelinum', is a software testing tool that's used to perform regression testing.Its a 
+open source regression testing tool that includes playback recording capabilities
 
 
 Selenium:
@@ -854,7 +856,9 @@ if own code will be written to expand ansible's core features
 On, any given playbook run, the search path decides which of these files Ansible can find and use.
 
 
-YAML Scripting: It is simple for humans to read write than other popular data formats like XML, JSON.Further thare are libraries available in most programming languages for working with yaml, hence Ansible uses it to express ansible playbooks.
+YAML Scripting: It is simple for humans to read write than other popular data formats like XML, JSON.
+
+Further thare are libraries available in most programming languages for working with yaml, hence Ansible uses it to express ansible playbooks.
 
 For ansible, each yaml file begins with a list of items.
 
@@ -873,7 +877,8 @@ Yaml does not allow use of tabs while creating YAML file; Spaces are allowed ins
 
 Terraform Overview:
 
-It is a tool for building, changing and versioning an infrastructure safely and efficiently. Terraform can manage existing and popular service provider as well as custom inhouse solutions.
+It is a tool for building, changing and versioning an infrastructure safely and efficiently. Terraform can manage
+ existing and popular service provider as well as custom inhouse solutions.
 Configuration files describe to terraform the components needed to run a single application or the entire datacentre
 Terraform generates an execution plan describing what it will do the desired state and then executes it to build the described infrastructure
 
@@ -964,7 +969,8 @@ Overview : Docker is popular containerization platform for packaging your applic
 
 Docker Platform: It is a feature provided by docker to manage the lifecycle of containers 
 
-                 It provides ability to package and run applications in a loosely isolated environment called a container, and to manage the lifecycle of the                  container,it provides tooling and platform   
+                 It provides ability to package and run applications in a loosely isolated environment called a container, 
+and to manage the lifecycle of the container,it provides tooling and platform   
            
 Uses of docker platform: 
   Development: Containers can be used to develop ypur applications and its supporting components.
@@ -975,9 +981,12 @@ Uses of docker platform:
 Advantages:
 
 Docker provides at various stages of the software development lifecycle
-   Build: By Dockerizing an app into a single or several modules, Developer team can save time, effort and money.
-   Test: Test engineers may test each conatinerized applications or its components, individually with docker without affecting the other parts of the program
-   Deploy and Maintain: Docker helps teams collabrate more effectively by ensuring that the same versions of libraries and packages are utilized throughout the             development process.Futher more, deploying a previously tested container prevents bugs in the bulid process, allowing for a smooth transition to production.
+Build: By Dockerizing an app into a single or several modules, Developer team can save time, effort and money.
+Test: Test engineers may test each conatinerized applications or its components, 
+individually with docker without affecting the other parts of the program
+Deploy and Maintain: Docker helps teams collabrate more effectively by ensuring 
+that the same versions of libraries and packages are utilized throughout the development process.Futher more, 
+deploying a previously tested container prevents bugs in the bulid process, allowing for a smooth transition to production.
 
 
 Features:
@@ -990,7 +999,9 @@ Increases productivity, simlply it makes technical configuration and application
 It provides business benefit  by decreasing the infrastructure and mainatainance expenses of existing application portfolio also
 increasing the time to market for new solutions
 It allows to run the applications in the secured environment and each container is independent and able to run any type of applications
-It contains swarm as a tool to scheduling and clustering docker containers, it's frontnd is the docker api which allows us to control it with a vareity of tools it also allows us to manage a cluster of docker hosts as if they were single virtual host, 
+It contains swarm as a tool to scheduling and clustering docker containers, 
+it's frontnd is the docker api which allows us to control it with a vareity of tools it also allows us to manage a 
+cluster of docker hosts as if they were single virtual host, 
 its a self organised collection of engine that makes plugable backends possible incoming requests for published 
 portd on available nodes are routed to an active container using Docker's routing mesh functionality.
 It allows the connection even if no tasks is currently running in the node.
@@ -1032,7 +1043,8 @@ stop or to destroy the docker container  we can the docker API or docker CLI
 Volume------>Volumes are used to store the persistant data generated by docker and utilized by docker containers.
 Docker manages everything via docker CLI or docker API.
 
-Network------>A way for all the isolated containers to communicate with one another, BRIGE, HOST,OVERLAY, NONE & MACVLAN are the five main network drivers in docker.
+Network------>A way for all the isolated containers to communicate with one another, BRIGE, HOST,OVERLAY, NONE & MACVLAN 
+are the five main network drivers in docker.
 
 
 Docker Engine:
@@ -1107,23 +1119,530 @@ Overlay------> The overlay network driver connects many docker daemon hosts to f
 when encryption enabled, this network sits onthe top of the overlays host-specific networks allowing containers connected to it, 
 including swarm service containers to communicate securely.
 
+Macvlan------> Applications particularly legacy applications or network traffic monitoring apps that demand to be connected directly to the physical network.
+
+None--->It is used to completely disable the networking stack on a container.
+
+
+Summary: Bridge---> When multiple containers need to communicate on the same docker host 
+         Host-----> When the network stack should not be isolated from docker host, but other components of the container should be, host 
+		 networks are the best option
+         overlay----> When containers running on different docker host need to communicate, or when multiple apps require swarm services.
+         Macvlan----> When containers are required to look like physical hosts on the network, each with its own MAC address.
+                      (This requried when we transition from the VM setup, When we  needing our container to appear as physical host)
+
+Third party network plugins can be used to integrate docker with specialized network stacks.
+
+
+Docker Registry and Docker Hub:
+
+Docker registry-----> It is a storage and distributions system for named Docker images.Mulitple versions of 
+same image may exists each of which is distinguished by its tags. Docker registry is organised into docker repositories,where
+our repository holds all the versions of a specific image.
+The registry allows docker uses to pull image locally, as well as push new images to registry, given adequate access permissions when applicable.
+The user should use a docker registry if they want to ensure that their images are saved in a secure location,
+Control over their image distribution, completely integrate image, storage, and distribution tightly into their in-house development workflow. 
+Note that the docker registry is compatible with docker engine version 1.6.0 or higher.
+
+Docker Hub-----> Docker hub is the world's largest conatiner image library ansd community.
+Over 100,000 container images from software manufactures, open source projects, and the community are available to browse.
+Docker hub is a docker hosted-respository, that allows you to search and share the container images with team .
+
+Docker Hub Features: 
+Private Repositories: It allows users to push and pull container images.
+Automated Build: A user can automatically build container images from GitHub and Bitbucket and push them to docker Hub.
+Teams & Organizations:  A user can also manage access to private repositories.
+Offical Images: Docker hub allow users to pull and use high quality container images provided by docker.
+Publisher Images: It also allows users to pull and use high quality container provided by external vendors. Certified images also include support and guarantee 
+compatibility with docker enterprise.
+Webhooks: It enables the user to trigger actions after a sucessfull push to a repository to integrate with docker hub with other services.
+
+Docker hub allows to:  
+Explore the worlds, largest container image repository, 
+easily search more than one million container images, including certified and community provided images.
+Get access to free public repositories or choose a subscription plan for private repository.Become a verified publiser.
+Run more technology and containers with certified infrastructure, container and plugins.
+
+Docker Compose: It is tool for defining and running multicontainer docker applications.
+Compose uses a YAML File to configure the application services.Then, with a single command we can create and start all the services from the configuartion,
+Compose is compatible with all environments, including production, staging, development, testing, and continous integartion workflows
+
+Three step process in Compose---> Create a docker file to define your apps environment, so it can be replicated everywhere.
+In docker-compose.yml, define the services that make up the app, so that they ca be run in a separate environment.
+Run, Docker compose up, and it will start and run the entire app. We can run the docker-compose up using the docker Compose binary.
+
+Characteristics of Docker compose:
+Docker compose offers multiple isolated environments on a single host. To isolate environments from each other,Compose uses a project name.
+All volumes used by our services is preserved by compose.
+To create a conatiner, Compose caches the configuration used. Moreover, Compose reuses the existing containers when we restart a service that has not changed 
+and the composed file composed supports variables.
+Basically, to customize our composition for different environment or different users, we can use these variables 
+
+Use Case : Developement Environment----> While developing a software, the ability to run an application in an isolated environment and interact with it is crucial.
+The compose command line tool can be used to create the environmnent and interact with it.
+
+Automated Testing Environment compose provides a convenient way to create and destory isolated testing environments for the test suite. 																											
+We can Create and destroy these environment by defining the full environment in a compose file.
+
+Single Host Deployments: Compose is generally concentrated on developement and testing procedures,although it is progressing on more production-oriented
+capabilities with each release.
+
+
+Docker Compose Commands: 
+
+docker compose build:Used to build or rebuild services
+docker compose create: Used to create containers for a service
+docker compose down: Used to stop and remove container and networks
+docker compose kill: Used to force stop service containers
+docker compose ls: Used to list running compose projects.
+docker compose pause: Used to pause services 
+docker compose ps: command to list containers.
+docker compose restart: restart  containers.
+docker compose rm: Used to remove stopped service containers.
+docker compose start: to start the services
+docker compose stop: to stop the contianer services
+dokcer compose up: to create and start the containers
+
+CONTINOUS MONITORING
+
+Overview: CM is the ability to detect risk, complilance and Security issues in an operational environment.
+It mainly involves monitoring & identifying complilance issues and security risks in each phase of the DevOps cycle.
+
+It acts as an auditing tool where it can navigate through old monitoring data to analyse and improve the performance of the system.
+
+Roles:
+It assits in the design and manintainance of the a stabled and reliable system.
+
+It displays application behaviour during peak business hours.
+
+It reduces the cost by acquring precise knowledge of software asset duplication 
+
+It reduces the chance of application going down.
+
+It notifies you if there is a problem with the infrastructure & appication service.
+
+It retrives and analyzes historical data.
+
+Types of continous monitoring :
+
+Real time monitoring, Infrastructure monitoring,  Application Monitoring and network monitoring.
+
+Realtime monitoring: it deals with the monitoring of server CPU statistics, Disk usage and Memory stats, 
+Spikes in CPU performance & Input and output count on the server.
+
+Infrastructure Monitoring: It deals with tghe monitoring of , CPU & Memory, Network & Router, 
+Appservers , webservers and database servers, IT hardware and Software 
+
+Application Monitoring: It deals with the monitoring of API sucess or Failure, Performance metrics count,
+API Accessibility & API HTTP error code
+
+Tools for Continuos monitoring: Nagios,ELK stack, Zabbix, Sensu, NewRelic and Splunk, DataDog, AppDynamics, AWS Cloud watch, Grafana, Paerduty and Ganglia
+
+Nagios: It is  open source continous monitoring tools which is used to monitor the system, network and IT infrastructure.
+
+It is available in two variants: Nagios Core and Nagios XI 
+
+Nagios core is an open source product and Nagios XI is a Licensed version.
+
+Why? 
+It can find any tye of network and server issue, 
+It monitors the infrastructure actively
+It can facilitate automatic problem resolution infrastructure upgrade and Planning 
+It trouble shoots server performance issue
+
+Features of nagios: It facilitates customized service checks because of the simple plugin design
+
+It monitors Host resources, Processor load and Disk usage.
+It monitors network services; SMTP, POP3,HTTP and Ping
+It facilitates parallelized service checks.
+It enables automatic log file rotation.
+It facilitates proactive problem resolution by event handlers.
+It enables the implementation of monitoring hosts 
+It enables contact notifications on problem resolution.
+
+Nagios Architecture:
+ 
+Nagios Uses a client Architecture. the Nagios server usually runs a host and the plugin run on the remote hosts,
+which are specified for monitoring.
+
+Nagios Architecture is comprised of three components namely, 
+Process Scheduler, Plugins, and User Interface.
+
+The scheduler is a component of the server part if Nagios. It sends the signal to execute the plugin at the remote hosts.
+The Plugin gets the status from the remote hosts and then sends the data to the process scheduler
+The process scheduler updates the user interface and notifications are sent to the admin
+
+Nagios Plugins: Plugins are compiled executable scripts, pearl scripts, and shell scripts, that can be  run from the command line
+to check the status of a hosts or service
+
+What does a Plugins do?
+Plugins allow the user to monitor databases, operating systems,applicatons, networks equipments,and protocols.
+They are standalone extensions to Nagios core.
+
+Nagios Plugin types:
+Offical Plugins, Community plugins, and Custom Pluings.
+
+The Offical Plugins are developed and Maintained by the offical nagios plugin team, community plugins are developed by hundereds of Nagios Community Members.
+The Custom plugins are developed by the users in order to suit their environment.
+
+Configuring Plugins on remote: 
+Nagios plugins monitors hosts, devices, services, protocols and applicatons with Nagios and send the report to the NRP
+NRP sends those reports to the Nagios server based on the Nagios server Request.
+Nagios and NRP can perform all the processes or with Nagios Plugins.
+
+
+To monitor the remote hosts on the nagios server two installationa are:required; 
+Remote hosts NRP plugin and Nagios plugins, Nagios server NRP plugin.
+
+
+Monitoring Implementation:Nagios perform monitoring by using default plugins.
+There are some default plugins available to monitor devices and  services, including Unix, and Linux, Windows, and network servers; 
+routers and Switches; CPU load, Disk usage, Memory usage,and Current Users
+
+Default Plugins: Nagios exchange website, offers a number of addtional plugins developed by users that can be used as per their requirement:
+These are "check_http": This plugin is used for monitoring webservers. 
+"check_ftp" : Plugin used for monitoring FTP servers
+"check_ssh": This plugin is used for monitoring SSH servers
+"check_smtp":This plugin is used for monitoring the email servers.
+"check_pop": This plugin is used for monitoring the POP3 servers on the email servers
+"check_IMAP":This plugin is used for monitoring IMAP4 service on your email servers.
+
+ELK Stack: It is open source distributed monitoring solution  with centralized logging and application performance monitoring 
+suitable for almost any structured and unstrctured datasource.
+
+ELK stack is an acronym for three open source projects: Elastic search, Logstash and Kibana
+Recently, a new component called beats was included in the ELK stack.
+
+ELK Stack components:
+
+Main components of ELK stack are Elastic Search, Logstash, Kibana and Beats
+
+Elastic Search: Elasticsearch is a distributed search and analytics engine that provides real-time search and analytics for data,structure and unstructured.
+
+Fuctions: 
+Store: It can store complex data structures that are serialized as JSON documents.
+Index: It can Index the documents almost in real time.
+Search: It supports searches through an inverted index 
+Analyze:It detects and adds new fields through dynamic mapping, which makes schema-less possible.
+
+Logstash:It is a data processing component of ELK Stack. It collects data from various sources 
+and feeds the elastic search or normalizes it to other destinations
+
+Kibana: Kibana is data visualization tools that provides the graphical user interface for elastic search. 
+Kibana offers these advantages to its users, simple and easy for beginners to understand. Ease of conversion of visualization and dash boards in to reports
+Canvas Visualization help to analyze complex data in an easy way.
+
+Beats: These are lightweight data collectors that are installed directly on the datasource and collect data for specific purposes, which are then sent
+to elasticsearch or logstash.
+Data Collectors: 
+File beat: it sends local file records.
+Winlogbeat: It sends the window event logs.
+Metricbeat: It sends system or application performance metrics.
+
+Efficieny of ELKStack: 
+It can view stats to detect application defects.
+It collects logs from servers and applications that can be analysed for improvement. 
+It can provide backup of monitoring stats and able to store the monitoring system.
+It is combaination of elasticsearch for searching data, log stash to process and store various status, and kibana to visualize stats on 
+front end application.
+It has a set of utilities which can provide the most powerfull business analytics. 
 
 
 
 
+Continous orchestration using Kubernetes:
+
+Container Orchestration: It automates the deployment, Management, scaling and Networking of containers.
+
+It is useful for enterprises to deploy and manage multiple conatainers and hosts.
+
+purpose of conatainer orchestration:
+
+A container orchestrator is a system that automatically deploys and manages conatainerized apps.
+It responds dynamically to changes in the environment to increase or decrease the deployed instances of the manaed app
+It ensures all deployed container instances get updated if a new version of a service is realsed
+It dynamically responds to the changes in the environment to increase or decrease the deployed instances of the managed app.
+It allows to deploy the same application across different environment without needing redesign it.
+
+Why do we need container orchestration:
+
+conatainer orchestration is essential to automate and manage tasks such as:
+provisioning and deployment of containers 
+configuring and scheduling of an application in relation to the containers running at.
+Allocation of resources between containers. 
+redundancy and availability of container,
+Scaling up or removing the containers to spread application load evenly across host infrastructure, 
+load balancing of service discobery between containers and traffic routing.
+Health monitoring of conatiners and hosts 
+Secure interactions betwenn containers 
+
+How does container orchestration work:
+Starting with the configuration files, describe the configuration of application using either YAML or JSSON file.
+The configuration file tells the management tool where to find the container images, hoe to establish a network, and where to store logs
+The deployment ofa new container, the orchestration tool automatically schedules to a cluster and chooses the best 
+host for it,taking into consideration any define requirements or constraints 
+Further container orchestarion tool manages the container life cycle based on the specifications that were determined in the configuaration file. 
+It can also be used in any environement that runs containers, including on premises servers and public cloud or private cloud environments.
+
+Container Orchestration tools broadly defined as providing an enterprise level framework for integration and managing container at scale 
+These tools aims to simplify container management and provide a framework not only for defining initial container deployment, but also for managing multiple
+Containers as one entity, for purposes of availabilty, scaling and networking.
+
+The Lisit of tools: K8's ; Docker Swarm, Apache Mesos, openshit and Hashicorp Nomad.  
+
+Introduction to K8's:
+K8's is an powerful opensource system for managing containerized applications in clustered environment.
+It aims to provide better ways of managing related distributed components and services access varied infrastructure.
+It is also known as Kube.
+Note that kubernetes was originally developed by google and then acquired by Cloud Native computing Foundation, CNCF.
+K8's acts as a cloud service in major cloud providers, such as EKS in AWS and kubernetes Engine in GCP.
+
+Features:
+Automatic Rollouts and Rollbacks:  
+Kubernetes has a feature to roll but change to the application or its configuration while monitoring application Health.
+If something goes wrong, you can roll back the changes.
+
+Service discovery & Load balancing:
+In kubernetes Pods have their own IP address and a single DNS Name is given for a sea of Pods
+It enables load balancing 
+There is no need to modify application to use any other service discovery mechanism
+
+Horizontal Scaling:
+Horizontal scaling enables you to scale your application up and down with a simple command, depending in the requirements.
+
+SelfHealing: Kubernetes allows to replace and reschedule container when nodes die.
+
+Automatic Biin Packing : K8's places conatiners based on their resource requirements and other conatraints, without impacting the availability.
+It strikes a balance between critical and best effort workloads.
+
+Batch Execution: It can manage batch and CI workloads using K8's by replacing conatainers that fail.
+
+Storage Orchestration: It allows you to mount a storage system of your choice. we can choose frm local storage, public
+cloud provider or use a shared network storage system.
+
+IPv4 and IPv6 dual-stack: K8's allocates IPv4 and IPv6 addresses to pods and services.
 
 
+Benefits: 
+Open source and Modular: It is a fully opensource, Community-led project overseen by the CNCF.
+
+Portability and Flexibility:K8's is highly portable and flexible because it can be used on a variety of  different infrastructure and environement configuration
+
+Multi-Cloud capability: K8's can hosts workloads running on a single cloud as well as workloads that are speard across multiple clouds.
+
+Huge commnunity Support: K8's Community support provides best ideas and practices.
+
+Easy service Organization with pods: The service organization offers pods to create and manage in K8's.
+
+Increased Developer Productivity: With increased developer productivity, teams can deploy multiple times  a day.
+
+Kubernetes Components : The working kubernetes deployment is called as Cluster.
+
+It has two components : The control plane and The compute machine or nodes.
+
+The control plane is responsibel for maintaining the desired state of the cluster and compute machines run the applications and workloads.
+
+Control Plane is the first component of a cluster.
+The contril plane components maje global desicions about the cluster like scheduling.
+It also helps in detecting and repsonsible to cluster events. 
+
+Components of the control Plane: 
+
+The Kube-apiserver: It is designed to scale hprizontally by deploying more instances. we can run several instances of kube-apiserver and balance
+traffic betwenn those instances.
+
+Kube Scheduler: It watches for newly created pods with no assigned node and select a node for them to run on.
+
+Kubecontroller Manager: it runs controller processes. Each controller is a separate process , but to reduce complexity, they are
+all compiled into a single binary and run in a single process 
+
+The etcd: It is consistent and highly available key values store used as kubernetes backing store for all cluster data.
+
+The cloud-controller manager is also a control plane component. It helps when one wants to run kubernetes with a specific cloud provider.
+It incorporates cloud-specific controll logic and help to link with kubernetes cluster with cloud provider API.
+It only runs the controller that are specific to your cloud provider.
+
+The second component of a cluster is node. A K8's cluster needs atleast one compute node , but will normally have many.
+Pods are scheduled and orchestrated to run on nodes.
+
+Node Component: 
+Kubelet: Kubelet is an agent that runs on each node in the cluster to make sure that conatiners are runnning in a pod.
+
+Kube-Proxy: It implements a network proxy and acts as a load balancer on a kubernetes cluster.
+It also helps in redirecting traffic to a specific container in a pod, based on the incoming and IP details
+
+Container Run Time: The container runtime is the underlying software that runs containers on a kubernetes cluster.
+It is responsible for fetching, and stopping container images.
+
+Pod: It is smallest and simplest unit in the kubernetes object model.It represents a single instance of an application.
+It is the component of the application workload that runs on the worker node.
 
 
+Kubernetes Architecture: 
+It brings together  individual physical or virtual machines into a cluster using a shared network  to communicate between each server 
+this cluster is the physical platform  where all K8's components capabilities and workloads are configured 
+
+From a high level the K8's architecture consists of Control plane a distributed storage system to keep the cluster state consistant and
+a number of cluster nodes
+The control plane is the system that maintains a record of all kubernetes objects. 
+It continously manages the object states that responding to the changes in the cluster 
+It also works to makes actual state of  system  objects match the desire state all components of control plane can run on a single master node
+or can be replicated across multiple master nodes for High availability 
+Cluster nodes runs  the container and  are managed by the master node 
+The kubelet is the primary and mosts important controller in the K8's
+It is responsible for driving the container execution layer typically Docker 
+Pods are one of the crucial concepts in the kubernetes as they are the key construct that the developers interact with.
+It pacakges up the single application which can consists of multiple containers and stoarge volumes   
+
+Basics: 
+The Important components of kubernetes: Pods, Labels and Selectors.
+
+Pods: These are collection of one or more conatainer which shares  storage and network resources and its specifications to run its containers
+It is smallest unit in the kubernetes application
+
+Features: Conatiners in the pod can contain multiple applications
+pod templates are used to define how pods will be created and deployed 
+Pods share physical resources from the host machine in the forms of CPU and RAM & storage.
+
+How to use Pods:
+ There two ways: 
+ 
+01---> Pods running in a single container 
+02--->Pods running in multiple conatainers
+
+Labels: These are the key value pairs  that K8's attaches to the various objects such as services,Pods and nodes
+They are used to organise and select subsets of objects.
+
+Eg of Labels: "release":"stable"   "tier": "frontend"
+"track":"daily"  "partition":"Customer A"
+
+Selectors: The selectors are the core grouping primitives. These are used to select a group of objects 
+The K8's API currently supports two types of selectors namely Equality based selectors and Set based selectors
+
+Equality based selectors : It uses label keys and values to allow filtering 
+
+Eg: environment=production
+     tier !=frontend
+
+Set Based Selectors: It allows filtering keys according to set of values.
+Eg: environment in(production,qa)
+    tier notion(frontend,backend)
+	     partition
+		 !partition
 
 
+further important components:
+
+Controllers: These are the control loops that monitor the state of the K8's cluster and make a request changes were ever needed.
+
+The controller tracks atleast one kubernetes resource type 
+These objects have specific fields that represents the desired state
+
+The controller for that resources are responsible for making the current state come closer to that desired state 
+
+It takes care the availability of the Pod and if it fails a replacement pod will be created automatically
+
+It manages pods using labels and selectors to identity the resources 
+
+Types of controller: Replication controller, Daemon set Controller, job controller.
+
+Replica set: 
+A Replica Set ensures that a set of replica pods is running at any given time.
+It is commonly used to guarantee the availability of the specified number of identical pods.
+
+What Replica set does: 
+The Replica Set uses the selector to identify the pods running and based on the result it creates and deletes the pods.
+It acquires the Pod if the pod does not have an owner reference and matches the selector of replica sets.
+
+When to use a Replica Set: 
+It can be used when we require a custom update orchestration.
+Or when do not require update at all 
+
+Deployment: It is controller taht changes the actuall state to the derired state  as specified 
+It is used to provide updates to the pods and replica sets 
+
+Uses: It is used to clean up the older replica sets.
+Rollout a replica set 
+Declare the new state of pods 
+Indicate that a rollout is stuck
+Apply multiple fixes to pods
+Facilitate more load 
+
+Deployment Operations are: Creating a Deployment
+Scaling a Deployment 
+Updating a deployment Cleaning up a deployment policy 
+Rolling up a deployment
+Pausing and resuming a deployment 
+
+Services: A service is an abstaraction that defines a logical set of pods as well as a policy for accessing them.
+These are defined in YAML that controller tracks atleast one kubernetes types.
+
+How K8's services Work: A kubernetes Services allows internal and external users of the app to communicate with:
+Nodes, Pods and Users
+
+Way to access k8's service: DNS Method-->When a new service is established the DNS Server watches the K8's API and its
+name becomes available for a quick resolution to requesting apps
+
+Envrionment variable Method: The Kubelet adds environement variables for each active service for each node or pod is operating on in
+this approach
+
+Service Types: The cluster IP---> The default service type exposes  service within kubernetes Cluster 
+Node port--->It is a static port exposes the services of each node IP.
+Load Balancer---> A Cloud provider Load balancer exposes the service externally
+External Name---> Returns a CName Record with a value mapping a service to a preset exteranl name field 
 
 
+Kubernetes Networking: K8's Networking is a service that enables kubernetes is a service that enables kubernetes components to connect with one and another 
+as well as with other applications.
 
+It is primaruly concerned with: Containers in a pod communication via loopback utilizing networking.
+Cluster networking that allos communicatiion across distinct pods.
+The service resource that allows you to expose a pod - based appication so that it can be accessed form outside the cluster.
+Services exclusively published for use within the cluster.
 
+K8's Storage:
+K8's provides a convinient persistent storage mechanism called persistant volumes.
+Volumes serve as crucial abstarction in the kubernetes Storage architecture.
 
+how can we limit storage resource consumption: It is advised to place limits on container uses of storage, to reflect the amount of storage actually available 
+in the local datacenter, or the budget available for cloud storage resources.
+There are two ways of imiting storage consumption by containers.
+01-->Resource Quotas which limits the amount of resources,including storage, CPU and Memory, that can be used by all containers within a k8's namespace,
+and  the second is storage classes which limit the amount of storage provisioned to containers in response to a persistant Volume claim.
 
+Best Practices using Kubernetes storage: 
+Persistant Volume settings
+Resource quotas for namespace
+Supports high performance with quality of service definitions.
 
+Kubernetes Configuration: 
+When conatainer starts kubernetes uses two sorts of objects to inject configuration data into it which are: Secrets and ConfigMaps
 
+Secrets: It is a little pieces of data, such as a password, a token or a key, that contain a small amount of sensitive information users can create secrets.
 
+ConfigMap: It is an API object used to store non-confidential data in key value pairs.
+It can be used by pods as : 
+Environment variables 
+command-line parameters parameters
+Volume configuartion files
 
+Best Practices of using K8's Configuration
+Update kubernetes to the latest version
+Use pod Security policies to prevnet the use of risky containers or pods
+use k8's namespaces to properly isolate the kubernetes resources 
+Use network policies to segment and limit pod and container communications
+Configure the K8's API server Securely
+maintaining small container images
+
+How to manage a kubernetes cluster: It provides a command-line tool called kubectl to manage your cluster 
+
+we can use kubectl to send instructions ro cluster control plane or use the API  server to get inforamtion about all kubernetes objects 
+
+Syntax for treminal window: kubectl [command] [TYPE] [NAME] [flags]
+ The arguments for the syantax to run Kubectl
+"command":  refers to the operation that needs to be performed
+"TYPE": Refers to the resource type which is case insensitive
+"NAME": refers to the resource name whcih is case sensitive. if the name is omitted details for the all resources will be displayed
+"Flags": refers to the optional flags Eg: we can use SR server flag to specify the address  and port of the k8's API server
+
+To initialize the cluster run the following command in the master node: "sudo kubeadm init"
