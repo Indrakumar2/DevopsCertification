@@ -1,0 +1,434 @@
+Introduction to docker:
+
+Before docker there are scenarios like code which has been developed by the Developer which is working fine for them 
+but when it has been moved to the test environment the code doesn't work on the other system due to difference in the computer environments
+
+There are two ways to overcome this : 
+
+1. We can use a virtual machine.
+2. We can use Docker.
+
+   Criteria              Virtual Machine                                                Docker 
+
+OS Support           Occupies a lot of memory space                      Docker container occupies less space
+
+Boot-up time         Long boot-up time                                   short boot-up time
+
+Performance          Running multiple virtual machines                   Containers have a better performance 
+                     leads to unstable perfomance                        as they are hosted in a single docker engine
+
+Scaling              Difficult to scale up                               Easy to scale up
+
+Portability          Compatibilty issues while portability               Easily portable across different platforms
+                     across diffrent Platforms 
+
+Efficency            Low efficiency                                      High Efficiency 
+
+Space allocation     Data Volumes cannot be shared                       Data volumes can be shared and reused among multiple containers
+
+Docker is tool which is used to automate the deployment of applications in lightweight containers 
+so that applications can work efficiently in different environments
+
+A container is software package that consists of all the dependencies required to run an application
+
+so mulitiple conatiners run on the same hardware
+Conatiners are Maintained in isolated applications
+They are Highly productive 
+They are quick and easy to configure
+
+Docker working:
+When the docker is installed in the host machine it is the base engine a main component ie, docker engine 
+that has all the diffrent components that runs the docker environment.
+
+Docker Engine: is the base engine installed on the hostmachine to build and run the containers using docker components  and services 
+
+It uses the Client-Server Architecture: Client component which is docker CLI , REST API, Server side which is docker DAEMON
+
+Client will be installed on the hardware
+
+There is server which controls how the docker client is created.
+
+Docker client and server communicate using a REST API(This can be interfaced and programmed).
+
+Docker Client is a service which runs a command. The command is translated using REST API and is sent to the docker daemon (server).
+
+Then, Docker Daemon Checks the client request and interacts with the OS in order to create and manage containers.
+
+Components of Docker:
+
+Docker Client- server: It is accessed from the terminal (poweshell for windows & Terminal window for mac os)and a docker host runs the docker daemon and registry.
+
+When the terminal window opened the uses can build Docker Images and run docker containers by passing commands from the Docker Client to Docker Server.
+
+
+Docker Image:
+
+Docker Image is a template with instructions, which is used for creating Docker containers.
+Docker Image is built using a file called docker file.
+Dokcer Image is stored in a DockerHub or in a repository that allows other to use it.
+Docker file can be created using docker commands forms a definition of image.
+
+Docker Container:
+It is standalone, executable software package which includes applications and their dependencies.
+Numerous docker containers can run on the same infrasturcture and share the os with other containers.
+Here, each application runs in isolation
+
+
+Docker Registry:
+
+Docker registry is a open source server-side service used for hosting and distributing images
+Docker also has its own default registry called Docker Hub.
+Here, Images can be stored in either public and private repositories.
+Pull and Push are the commands used by users in order to interact with a Docker Registry
+
+
+Docker file creates a docker image using build command.
+A docker image contains all the projects code
+using docker image, any user can run the code in order to create Docker conatiners.
+Once a docker image is built its uploaded in a registry or a docker hub
+From the dockerhub, users can get the docker image and build new containers.
+
+
+Advantages of Docker: Rapid Deployment
+                      Portability
+                      Better Efficieny
+                      Faster Configuration using YAML.
+                      Highly Scaliblity
+                      Security
+
+
+Docker engine or docker is a client server application that bulids and executes containers using docker components.
+REST API is a primary mode of communication between docker client and docker daemon.
+Dokcer toolbox is used for older versions windows and Mac systems with the following features:
+Docker Engine , DockerMachine, Docker Compose, Kitematic.
+
+Components of Docker:
+
+Docker Client: Dokcer client consists of the CLI command which is used to issue commands to the docker daemon
+Docker Client uses RESTAPI to issue commands to docker Daemon through scripting  or direct CLI commands.
+ForEg: if we use docker pull command, the client sends this command to daemon, which performs the operation
+by interacting with other components(image, container, Registry)
+Docker Daemon is a service which interacts with the operating system and performs all kind of services.
+
+The Docker Daemon listens for the REST API Request and Performs the operation.
+
+A command dockerd is used to start a Docker Daemon.
+
+Docker Host runs the Docker Daemon and Registry.
+
+
+Docker IMAGE:
+
+A Docker Image is a Template of instructions which is used to Create Containers. It is wrriten in a format called YAML.
+
+Docker image is built using a file called Docker File.
+
+It is comprised of multiple Layers.
+
+By default, Docker image starts with a base layer
+
+Here, each layer depends on the layer below it.
+
+Image layers are created by executing each command in the dockerfile and are in the read only format.
+
+
+
+Whenever a user creates a container, a new layer is formed on top of the image layers called container layer.
+
+Every container has a separate (R/W) container layer and any modification in a container is reflected upon the container layer alone(we can able to create a
+own read/write instructions with in a container).
+
+
+When a conatainer is deleted, the top layer is also gets deleted.
+
+What should be done when there is a change in image layer?
+
+Users can add a new layer to the base image.
+
+But, the users cannot modify any of the existing image layers.
+
+The actual main image cannot be modified. but we can able to modify it locally after copying it.
+
+DID YOU KNOW:
+
+Base Layers are in the read only format.
+
+The layers can be combined in a  union file system to create a single image.
+
+Union File system saves memory space by avoiding duplicating of the files.
+
+This allows a file sysytem to appear as writable(but without modyfying the file) which is known as copy-on-write
+
+
+
+Docker uses a copy-on-write strategy with both docker images and docker containers themselves.
+
+CoW is strategy to share and copy files for better efficiency.
+
+This strategy makes the docker as efficent by reducing the usage of disk space and increasing the performance of conatiner.
+
+
+Docker Registry:
+
+Dokcer Registry is a service to host and distribute docker images among users.
+
+Repository is a collection of docker images.
+
+In Registry, a user can distinguish between docker images with their  tag names.
+[A tag name is alphanumeric identifier attached to an image]
+
+
+Docker has its own cloud based registry called Dockerhub where users store and distribte container images.
+
+Docker registry has public and private repositories.
+
+In Registry, PUSH and PULL commands are used to interact with the docker images.
+
+PULL Command- It pulls(retrives) a docker image from the Docker Registry.
+
+PUSH Command- It pushes(stores) a docker image in a Docker Registry.
+
+DID YOU KNOW: 
+
+In Docker Registry, deleting a repository is not a reversible action.
+
+Docker Container: 
+
+It is an executable package of application and its dependencies together.
+
+Since it's Light-weight, it can be easily deployed and executed on other computer environments regardless of 
+their host OS/configurations.
+
+Docker container run applications in isolation and also share the OS kernel with other containers.
+
+Data volumes can be shared and reused among multiple containers.
+
+It is build using Docker images.
+
+Docker RUN command builds a container.
+
+
+
+DOCKER COMPOSE:
+
+It is used for running multiple containers as single service.
+
+Here, each container runs in isolation but interact with each othere.
+
+All Docker compose files are YAML files.
+
+FOR EG: if we are having  an appliation that requires Apache server and MY SQL database we could 
+create one Docker Compose file which can run both container as a service without the need to start each one separately.
+
+
+DOCKER SWARM: 
+
+Docker Swarm is a service for containers which allows IT administrators and developers to create  
+and manage a cluster of swarm nodes within the Docker Platform.
+
+A swarm node is an individual docker engine participating in the swarm.
+
+Each node of docker swarm is a docker daemon and all the docker daemons interact using docker API.
+
+A Swarm consists of two types of nodes: Manager node and worker node
+
+Manager Node maintains the cluster management Tasks 
+
+Worker nodes receives and executes tasks from manager node.
+
+Docker basic commands,
+
+yum install Docker---> install Docker on your system.
+
+Sytemctl start Docker---> start the docker daemon.
+
+Docker rmi <Image ID>---> to remove a docker image
+
+Docker pull <image_name>--->  command to download an image.
+
+Docker run <image_id>---> command to run a image.
+
+Docker pull <image-name:tag>---> command to pull a specific Docker image from a docker hub.
+
+Docker build -t [image-name]: tag
+
+Docker stop <Container_ID>---> Command to shutdown a running container.
+
+Docker exec it container_ID bash--> command to access a running container.
+
+Architecture of Docker Container:
+
+DID YOU KNOW:
+
+When a container is created, a new layer  is formed on the top the docker image layers called Container layer.
+
+Each Container has a separate (R/W) conatainer layer and any changes made in a Docker Container is reflected 
+upon the particular Container layers.
+
+Incase a container is deleted, the container layer also gets deleted.
+
+Docker Container Commands,
+
+Docker Container commit- Command to create a new docker image from the changes made in container.
+
+Docker Container cp- command to copy files between the local filesystem and a docker container.
+
+Docker Container prune- Command to remove all stopped containers.
+
+Docker Container kill- command to terminate one or more running containers.
+
+Docker Container exec- Command to run a new command in a running container .
+
+Docker Container ls- Command to list Docker containers.
+
+Docker Container rm- Command to remove one or more containers.
+
+Docker Container restart- command to restart one or more containers.
+
+ 
+DOCKER SWARM:
+
+How do we make Docker work across multiple nodes so that they can share  containers among each other?
+
+Ans: Docker SWARM.
+
+Docker swarm is an enviroment were we can share multiple docker images runnig in the same Host OS, 
+With this we can able to run Docker Containers with Different solutions.
+
+Docker Swarm allows us to create and schedule multiple Docker Nodes (two or more nodes), 
+we can also have a large number of docker nodes in a single swarm
+
+Docker Swarm is a service which allows users to create and manage a cluster of Docker Nodes and schedule Containers
+
+In Docker Swarm , Each node is a docker daemon , 
+and the daemon can able to interact with the Docker API and it has the full benifits of Docker Daemon
+
+Each node of a Docker Swarm is a Docker daemon and all Docker Daemons interact using the Docker API.
+
+Another Advantages is Each Docker container within the Swarm can be deployed and managed as a node in that entire clustered environment.
+
+Docker Swarm provides high availability of resources incase of any failure in containers.
+
+Docker Swarm can Reschedule containers on node failures(with Docker swarm on fault tolerance)
+
+Swarm node has a backup folder, in case the main node fails, it can be used to restore the data onto a new Swarm.
+
+Features of Docker Swarm:
+
+It is fully Decentralized , very easy to access and manage the environment.
+
+The communication between the Manager and Client Node is Highly Secured.
+
+Auto Load Balancing, that can used utilized based on the structure of the Swarm Environment.
+
+High Scalability, Due to the Auto Balancing it achives this too.
+
+Roll Back a task, We can able bring back the Previous same environment.
+
+In swarm, Containers are launched using services i.e., the Rest Service API's are used.
+
+A Service is a group of containers of the same image.
+
+This Services enables to scale the appication on-demand
+
+Before the deployment of Docker Swarm, the environment should have atleast one node Deployed.
+
+Types of Nodes: Manager Node & Worker Node
+
+MANAGER NODE: Manager Node maintains the cluster management tasks
+
+WORKER NODE: It recives and Executes tasks from the Manager Node.
+
+
+Architecture of Docker Swarm:
+
+
+		 MANAGER NODE
+										
+								
+								
+  WORKER NODE1    WORKERNODE2      WORKERNODE3
+						
+						
+Manager Node knows the status of all the worker nodes in a cluster.
+
+Worker nodes accepts tasks sent from manager.
+
+Every worker node has as an agent, which reports on the state of the node's tasks
+to the manager so, the Manager node has the full control of the environment. This way,
+the manager node can maintain the desired state of the cluster.
+
+The Worker nodes communicate with the manager node using API over HTTP.
+
+In Docker Swarm, Services can be deployed and accessed by any nodes of same cluster.
+
+While creating the service , a user has to specify which container image to use.
+
+The worker nodes communicate with the manager node using the RESTAPI over HTTP.
+
+In Docker, Once the services are deployed and accessed by any node of same cluster.
+
+While creating a service, user has to specify which container image to use.
+
+Here a service is either global or replicated.
+
+Aglobal service will run on every swarm node
+
+In replicated service, the manager node distributes tasks to worker nodes.
+
+Diff btw Services and Tasks: 
+A Services is a description of a tasks or the state, where as a task does the work.
+
+Docker enables a user to create services, which can start tasks.
+
+When a task is assigned to a node the same tasks cannot be assined to another node.
+
+DID YOU KNOW: It is possible to have a multiple manager nodes on Swarm, but there
+will be only one primary manager node, which gets elected by the other manager nodes.
+
+Recap
+  
+       Manager Node                              Worker Node
+
+         API                                   Checks for the tasks
+{ based on the CLI Command                      {Connects to the manager node
+a service is created }                          checks for new tasks}
+
+        Orchestration                          Executes the Tasks
+{Once we connect with the API                  {Assigned tasks will be executed}
+we can able to create for each  
+service}
+     
+        Tasks Allocation
+{Allocates the tasks via IP address
+(of worker node tasks)}
+    
+        Dispatcher and Scheduler
+{Assigns and instructs worker nodes
+to run a tasks}
+
+           
+
+DOCKER COMPOSE
+
+With Docker Compose, it is possible to run more than one container in a single service.
+
+Here, Containers run in isolation but can able to interact each other.
+
+In Docker comapose, a user can start all the services using a single command.
+
+Benfits of Docker Compose:
+
+Single Host Deployment.
+Quick and Easy configuration.
+High productivity.
+Security.
+
+
+
+
+
+
+
+
+ 
