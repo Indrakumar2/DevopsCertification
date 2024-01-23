@@ -1,0 +1,207 @@
+Docker Intro:
+There are three major things in Docker which made this tool a whole evolution in software development.
+
+The Docker Image, Docker Registry and Docker Container.
+
+These three components runs together like bread and butter which made the possibility of Build, Ship and Run anywhere.
+
+The Docker image or the Container image:
+(Universal app packaging)
+There were many package managers that were brrn used in software packaging but some them were limited to the capabilities.
+It resulted that a software packaging manager which has a feature of Cross OS, Cross Platform and application language agnostic,
+means it will run everywhere, and it runs on anything, as long is running linux or windows.
+
+DockerFile:
+A Dockerfile is a set of instructions to make a container image. The Docker image specification was so popular it's now a standard,
+Known as OCR image standard.
+
+Every Docker file starts with FROM instruction, it can be start with someone else's image. 
+we can also have many images from many FROM's.
+Eg: 
+FROM pyton           ------>python bins+libs
+RUN pip install flask------> adds flask
+WORKDIR /app----> meta data change in the filesystem. 
+COPY .. ----> this command copies the source code from the host we're building into its own layer stacked on top
+              of the others        
+CMD python app.py   ------->
+
+The docker conists of layers and with the capital letters called stanza. The docker process it from top down, will create layers.
+The layers will be moved around the servers as tarballs and inside those layers are files, directories and file permissions, and 
+sometimes metadata.
+
+According to the example , docker finds the python image that includes binaries & Libraries.
+
+This way the an image is build using Docker Build command.
+
+THE DOCKER REGISTRY:
+It is for application distribution.
+
+Every image has unique SHA hash.
+
+DOCKER CONTAINER RUN:
+
+When we create a dockerfile and build the image we can run a container and this running container is known as a NAMESPACE(This is an Linux Feature in which
+it prevents the application running in the container from seeing the rest of the operating system/ for Windows its diffrent Feature.) 
+
+It gets it's own blank file system and it will includes only the files that were in that image being built.
+
+It will gets its own IPAddress,ProcessList and Virtual NIC.
+
+When we do the Docker run command , it the image not present locally, then the Docker downloads the image automatically.
+
+MAJOR LINUX FEARTURES USED BY DOCKER:
+
+NAMESPACES-, CGROUPS, VETH(virtual Ethernet), IPTABLES-routing and control interface, 
+UNIONMOUNT- to get the file system with all the layers in image in it, into the container at start to took(it is like isolated file system from rest of the host). 
+
+
+Why now Docker?
+
+The Isolation Problem:
+
+Docker gives isolation like VM's, It allows to maintain multiple versions of same application in the same host.
+
+The Problem of environments:
+
+Once the Vm became more handy it increased the need no of environments to test in operations, production and user device. 
+
+Every part in this for particular environment whcih needs the different configurations 
+
+The container image itself became a abstract or a contract between where its run and whats running inside it.
+
+The Problem of Speed,
+
+Taking about Business, the docker helps to execute the ideas in then SDL and express the ideas in effective way to customer.
+
+Develop, Build, test and Deploy faster,
+
+Container exists  because: better isolation in single os, reduced evironment variences, increasing the speed of change(SDL and Business)
+
+
+Containers:
+
+'Docker Version'---> returns the versions of client and server docker engine in their services.
+
+it validates the connection between them.
+
+
+'Docker info'---> it returns the configuration setup of the engine. Eg: No of containers , images, running, stopped
+
+
+Images vs Containers:
+
+An Image is the binaries and libraries and source code that all make up the application.
+
+A container is a running instance of that image.
+ 
+We can have many numbers of conatainers using same image.
+
+Eg to run nginx container: Docker container run --publish 80:80 nginx
+
+Step1: Downloaded the latest image 'nginx' from the docker hub.
+
+step2: started a new conatiner from that image.
+
+Step3: opened port 80 on the host IP.
+
+Step4: Routes the traffic to the container IP, port80.
+
+'Docker Container ls'---> list the running containers.
+'Docker Container run' ---> starts a new container from an image.
+
+Eg to run nginx container DETACH mode: Docker container run --publish 80:80 --detach nginx
+
+tells the docker to run it in background.
+
+'Docker container stop' <container ID>---> stops the containers process but does not remove it.
+
+'Docker Container ls -a'--->List all the containers running and stopped .
+
+Run Vs Start
+
+'Docker conatiner run' always starts a *new* container.
+
+'Docker container start' used to start an existing stopped one.
+
+By Default, the names that are given by docker are a random ones(if not specified) that are genearted automatically from
+an open source list of adjectives and surnames of notable hackers and scientists.
+ 
+Eg to run nginx container in DETACH mode with specific name: Docker container run --publish 80:80 --detach --name webhost nginx
+ To run a MYSQL we can use docker run -d -p 3306:3306 --name DB -e MYSQL_RANDOM_ROOT_PASSWORD=YES mysql
+'Docker conatiner logs' <ID> or <name>
+to list the logs of containers.
+
+what happens when 'Docker Container run'
+
+It looks for the image that was specified at the end of the command {eg: niginx}, looks for the image 
+locally (it looks it in the image cache)if not available it will pull it from the registry.
+
+It downloades the latest version if the version is not specified.
+
+then it will creats a new container based on the image, it actually going to start a new layers of changes, right on top of where the image left off,
+
+then it will customise the networking, it gives a specific Ip address thats inside a docker virtual network 
+
+then it will open up the port that specified, if the ports are didn't mentioned using --publish then it not open any ports. Eg: 80:80 
+opens the ports 80 on host & forwards to port 80 in container
+
+then the container will start the CMD specified in the docker file.
+
+
+What a container do:(to check the behavior)
+
+'Docker container top'---> returns the list running process in specific container.
+
+'ps aux'--> it returns the process running in linux machine.
+
+'Docker container inspect'--> shows the metadata about the container (startup config, volumes, networking, etc)
+
+'docker container stats'---> it shows the performance data of all containers.
+
+Getting inside a container:
+
+'Docker container run -it'
+
+where, -t for allocating a pseudo -tty(simulates a real terminal, like what SSH does)
+       -i interactive (keep the session open to receive terminal input)
+
+to run a container in interactive mode:
+'Docker run -it --name proxy nginx bash'
+
+here the 'bash' is specified at the end is nothing but we are passing command or arguments telling what the container to do when it starts up.
+
+bash shell--> if run with -it, it will give you a terminal inside the running container.
+ it takes to the inside of the container as root user
+
+Also we can run a container in interactive mode while we giving run command in it and we can do adminstrative work inside the container and 
+download packages and update within the container but the resources will be mininmal. for example we can run in interactive mode on a 
+ubuntu container by pulling the image and then we can install curl in it and it will work like local machine.
+
+once we stop the conatiner it will not shows in LS and if we want start that container in interactive mode we need to use'docker container start -ai <name con>'
+
+if we want to see the shell inside a running container that actually running something like MYSQL or NGINX we can use 'docker container exec -it <name of con>'
+[Run addtional process in running container ], this helps to run additional process in an running conatainer without interrupting the primary process
+
+Eg: while troubleshooting
+
+Using ALPINE:
+
+Alpine is a small security focused distribution of linux.
+
+docker container run -it alpine bash---> it will return bash isn't in side the container 
+
+so,this proves that we can run only things in the container that already exists in image 
+
+In alpine the bash does not exists, instead it has sh(shell)
+
+  
+
+ 
+
+ 
+
+
+
+
+
+

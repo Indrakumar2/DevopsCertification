@@ -1,0 +1,105 @@
+AWS cloud History:
+
+Lauched in2002 internally in amazon.com 
+
+Then amazon launched its first aws service publically SQS in 2004
+
+In 2006 they expanded their services publically with SQS, S3 and EC2
+
+2007 they launched in Europe.
+
+and they expanded their services all over globe and became the leader in cloud Providers.
+
+In 2019 it generated over 35billion annual revenue, accounting 47% of the market in 2019
+
+AWS Use Cases:
+
+It enabels to build spophiscated, scalable application.
+
+They are applicable to diverse set if industries.
+
+It includes, enterpriseIT, Backup & storage, Big Data analytics.
+
+Webhosting, creating backend for Mobile & SocialApps
+
+We can run entire gamnig servers running in cloud.
+
+AWS Global Infrastructure:
+
+It has: AWS Regions, AWS Availability zones, AWS Data Centers, AWS Edge Locations/ Points of Presence.
+
+AWS Regions: 
+
+AWS has Regions all around the world.
+
+Names can be us-east-1, eu-west-3...
+
+A Region is a cluster of datacenters
+
+Most AWS services are region based, so when we are using a service it will be linked and scoped in specific region,
+that means when we are using a service in one region and we try it use it another region, it will like new time of using that service.
+
+How to Choose an AWS Region?
+
+If you need to launch a new application where should you do it?
+
+Factors need to be considered while choosing a region:
+
+Compliance with data goverance and legal requirements: Data never leaves a region without your explicit permission.
+
+Proximity to customers: reduced latency.(user numbers)
+
+Availabily of services with a Region: new services and new features aren't available in every region need to make sure before deploying the application.
+
+Pricing: Pricing Varies region to region and is transperent in the service pricing stage.
+
+AWS Availablity Zones
+
+It will be inside a Region
+
+Each Region has many availability zones(min3, max6)
+
+For example, in sydney there are three availability zones, each availability zones is one or more discrete data centers with 
+redundant power, networking and connectivity.
+
+They are separate from each other, so that they are isolated from diasters, suppose if something happens to one of the AZ 
+we know that is designed not to cascade to other AZs
+
+They are connected with high bandwidh, ultra-low latency networking and all linked together forms a AWS region.
+
+AWS Points of Presence(Edge Locations):
+
+Amazon has 400+ points of presence(400+ edge locations & 10+ Regional caches) in 90+ cities across 40+ countries.
+
+With this it can deliver the contents to the end users with lower latency as possible.
+
+AWS Global services: 
+
+IAM
+Route 53 (DNS services)
+CloudFront(Content Delivery Network)
+WAF(Web application Firewall)
+
+Most AWS Services are Region Scoped:
+
+EC2
+Elastic Beanstalk(Platform as a Service)
+Lambda(function as service)
+Rekongnition(software as service)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
