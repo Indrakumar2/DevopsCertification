@@ -195,11 +195,122 @@ so,this proves that we can run only things in the container that already exists 
 In alpine the bash does not exists, instead it has sh(shell)
 
   
+Docker Networks: 
+
+Review: "-p " which exposes the port on your machine.
+
+Docker Conatiner Defaults:
+
+When a container is getting started, in background it is getting connected to a particular Docker Network(Private Virtual network).
+
+By Default, it connects to "Bridge Network".
+
+Then each one of those networks that are connected to actually route through a NAT firewall on Host IP , whcich actually the docker
+
+Daemon Configuring the host Ip address on its default  interface so that your container can get out the internet or to the rest if the
+network and then get back
+
+All the containers on a virtual network can talk to each other without -p
+ 
+Eg: if a application had an SQL server and PHP Apache container , those  two containers should be on the same network and 
+they are able to talk to each other without actually opening their ports to the rest of the physical network.
+
+And if the an another application unrelated, that was using Mongo and node.js, we could create network for that so that they could
+talk with each other without using the "-p" to expose them to the network. but they couldn't actually talk to the other network
+where you might have an unrelated app running.
+
+it is like "Batteries included but removable:)"
+ 
+Defaults work in most of the cases but easy to swap out parts to customise it.
+
+The -p/ --publish is publishing the ports is always in HOST:CONTAINER format.
+
+"Docker container port <container name/ID>" ----> shows the ports forwarding traffic in that container from the 
+host to the container itself.
+
+The container will not use the ip address of the host itself, by default we can use inspect to figure out, using "format" option
+
+"--format"----> command option for formatting the output of commands using "GO templates"
+
+to know the Ip address of the container "docker container inspect --format '{{.NetworkSettings.IPAdress}}'<container name>"(if it is windows 
+we need to use double qoutes rather than single quotes in --format)
+
+this is actual node of that json output that will get..
+
+The output (ipaddress) will not be same as host IP.
+
+In docker we cant make a container to listen on more than one port at the host level, only one can listen.
+
+Containers can talk to each other inside there own virtual network unless they are connected in the same VN.
+
+If they the containers are connected to different VNs and wants to talk to each other then they need to go via their
+listening IP all they out the physical network again coming into the firewall then to ethernet interface then to the 
+another VN.
+
+Docker Networks: CLI Management of Virtual networks:
+
+"Docker Network ls"--> Shows the list of networks (spawns a new virtual network for the container that we want to connect.)
+
+"docker network inspect"---> to inspect a network
+
+"docker network create --driver" ----> Create command that has an optional driver that we can specify for using built-in
+and third party drivers to create a new virtual network.
+
+"Docker network connect"----> Attach a network to container.(Dyanmically creates a NIC in a container on an existing VN)
+
+"Docker network disconnect" ----> for detach a network from container, so that a new NIC is created on a virtual network for that
+container.(Dyanmically removes a NIC in a container on an specific VN)
+
+"Bridge" network in  docker which is a default network that bridges through NAT firewall to the phyical network that the host 
+is connected to....
+    "--network bridge"---> Default docker VN, which is NATed behind host IP.
+
+"Host" network is a special network that skips the virtual networking of docker and attaches the container directly to the 
+host interface.
+    "--network host"---> it gains performance by skipping virtual networks but sacrifies security of container model.
+it has its own pros and cons be it actually prevents the security boundaries of the containerization from protecting 
+the interface of that container.
+
+Also it can increase the perfromance of high throughput networking.
+
+"NONE" Network of having an inteface on the computer thats not attached to anything, 
+
+    "--network none" removes eth0 and only leaves with localhost interface in container.
+
+
+A network driver created a virtual network locally with its own subnet somewhere around 172.17 and above...
+
+   
+Points of Docker Networking: Default Security
+
+Create the apps so the FE/BE sit on same docker network.
+Their Inter-communication never leaves host.
+All externally exposed ports closed by default.
+We must manually expose via -p, which is better default security.
+
+Docker Networks: DNS
+
+There is one cruial thing to all these containers and virtual networks and them taking to each other, and thats naming.
+because in the world of containers constantly launching and disappering & moving & expanding & shrinking and of these 
+microservices that we're seeing cropup everywhere, is that we no longer rely in IP address as the way to talk (Forget Ips)
+from one thing to other. Because we can't assume from minute that IP addresses are may even going to be same, the container
+might go away ot it might fail and then docker brings it up somewhere else. 
+
+It just too dyanamic and too complicated to deal with that.
+
+but there is solution for this and that is DNS naming.
+
+Docker DNS: Docker daemon has a built -in DNS server that container use by default,
+ The container names are equivalent of a host name for containers taking to each other.
+
+  
+
+
+
+
+
 
  
-
- 
-
 
 
 

@@ -87,8 +87,101 @@ Elastic Beanstalk(Platform as a Service)
 Lambda(function as service)
 Rekongnition(software as service)
 
+To know a service that is available in the region or not we can use Region Table.
 
 
+IAM: Identity Access Management, GS
+
+Root account will be created by default and once created we should not use that account or even share it, we can create other accounts 
+from that root account.
+
+For that we can create Users. These are the people within organization and can be grouped.
+
+Users are people within your organization can be grouped
+
+Groups can only contain users not other groups.
+
+Some users don't have to belong to a single group, he/she can belong to multiple groups.
+
+A user who is not belong to a group is not a best practice but something we can do it in AWS.
+
+Also, a user can belong to mutiple groups.
+
+Why we create users and groups?
+
+In order to use the AWS account we need give the other users Permissions.
+
+Users or Groups can be assigned JSON documents called policies(an IAM Policy),
+
+These Policies define the permissions to the users with which can users can access service in AWS.
+
+In AWS we can apply the least Privilege Principle: so we don't give more permissons than a user needs.
+
+
+IAM USER Creation: IAM USER with adminstrator access indra pass: Helios@123
+
+IAM Policy Inheritance:
+
+If a user is not belong to a group, then that user can be attached to a policy called Inline policy
+which only attached to the user.
+
+IAM Policies Structure:
+It consists of a version number Version: policy language version, always include "2012-10-17"
+
+Eg:  
+
+   {
+     "Version": "2012-10-27", --------->(Policy Version Number)
+     "id": "S3-account-permissions", ------->(id is identifier for the policy which is optional)
+     "statement": [    ----------->(it can be one or multiple parts and it consists of,
+         {
+            "sid": "1", ------>(an identifier for the statement)
+            "Effect": "Allow", ----->(this defines the statement allows or denies access to certain API)
+            "Principal": { -------->(it defines which accounts/users/role the policy will be applied to..)
+                 "AWS": [arn:aws:iam::123456789012:root"]---->(root Account)
+            },
+             "Action":[ -----> (it defines list of api calls that will be allowed either denied based on the effect )
+                  "s3:getobject",
+                  "s3:putobject"
+    
+                  ]
+                  "Resource": ["arn:aws:s3":::mybucket/*"] ---->(it defines the list of resources, to which the policy will be applied to...)
+               }
+             ]
+           }
+
+added to this there is other attributes called "Condition": to which when the statement should be applied or not.
+
+IAM we can create a User, User Groups, policies...
+
+if we are creating policies we can attach the created policy to the a users or group using visual editor or json editor.
+
+IAM - PASSWORD POLICY:
+
+It ensures the protection of users and groups
+
+Here we are having two defence mechanisms:
+1. "password policy", because stronger the password more will be the account protection.
+
+*In AWS we can setup a password policy:
+
+  Set a minimum password length.
+  
+2.Require Specific character types: including uppercase letters, lowercase letters, numbers, non-alphanumeric characters.
+
+3. Allow all IAM users to change their own passwords.
+4. Require users to change their password after some time(Password expiration)
+5.Prevent Password reuse.
+
+The Second Defence Mechanism is the MFA (Multifactor Authentication Access)
+
+
+
+
+
+
+
+ 
 
 
 
