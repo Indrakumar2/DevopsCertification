@@ -173,16 +173,60 @@ Here we are having two defence mechanisms:
 4. Require users to change their password after some time(Password expiration)
 5.Prevent Password reuse.
 
-The Second Defence Mechanism is the MFA (Multifactor Authentication Access)
+The Second Defence Mechanism is the MFA (Multifactor Authentication Access):
 
+Users have access to your account and can possibly change configurations or delete resources in your AWS account.
 
+We need to protect atleast the ROOT account and all IAM users.
 
+MFA is a comnbination of password that users knows and a security device that user owns.
 
+Benifit of MFA is even if a password is stolen or hacked, the account is not compromised.
 
+MFA Devices options in aws:
 
+Virtual MFA device(Support for multiple tokens on single device)
+eg: Google authenticator(Phone only), Authy (Multidevice) 
 
- 
+With Authy we can have our root account, the IAM user and another account and another IAM users, we can
+have many users as we want on our Virtual MFA.
 
+Universal 2nd Factor(U2F) security key:
+
+This a second method of using MFA and it is a physical device,
+
+Eg: A yubikey by Yubico which is 3rd party to AWS
+
+It supports for multiple root and IAM users using a single security key.
+
+Other options: Hardware key fob MFA device(by gemalto).
+               Hardware key fob MFA device for AWS GovCloud (US)(by surepassID)
+
+How users can access AWS?
+
+To access AWS we have three options:
+
+   AWS management console (Protected by Password  MFA)
+
+   AWS CLI(Protected by access keys)
+
+   AWS SDK(for application development, protected by access keys)
+
+Access keys are generated through the AWS console 
+
+Users are reponsible for their own access keys.
+
+Access keys are secret, just like password, Don't share them.
+
+What is AWS CLI:
+
+A tool that enables you to interact with AWS services using commands on the command-line shell.
+
+With is CLI we can directly access to the public APIs of AWS services.
+
+We can also develop our own scripts to mangage the resource and automate some task
+
+It is open source
 
 
 

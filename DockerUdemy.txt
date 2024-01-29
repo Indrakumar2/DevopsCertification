@@ -303,7 +303,109 @@ but there is solution for this and that is DNS naming.
 Docker DNS: Docker daemon has a built -in DNS server that container use by default,
  The container names are equivalent of a host name for containers taking to each other.
 
-  
+When we are creating a new network not using default ones to run the conatiners it actually gets a new feature,
+which is automatic DNS resolution for all the containers on that VN from all the other containers on that virtual
+network using their container names.
+
+DNS Default names 
+
+Docker defaults the hostname to the container's name but we can also set aliases.
+
+when we create two containers in same VN that can able to communicate with each other with their names,
+
+this solves the huge problem when we are spinning up containers because we can't predict how long they last and
+where they might be a minute from now,
+
+In a production design we got a cluster of Docker swarm servers.
+
+It may not change very much on the local machine, but if we stop 3 or 4 containers, and then start the same container, and if start them in a different order,
+they may not have the same IP address.
+
+But their host names, or their container names, will always be the same.
+
+The Default bridge network has one disadvantage  that it does not have the DNS server built into it by default.
+instead we need to use --link to connect mannualy in that default bridge network,
+
+but if we create a new network for the apps it makes easier and we don't want to link procedure.
+
+Docker CLI assignment
+
+docker conatiner run --rm -it centos:7 bash
+
+yum update curl
+
+curl --version 
+
+
+Docker DNS Round Robin assingment
+
+docker network create Dude
+
+docker run -d --net dude --net-alias search elasticsearch:2
+
+docker container run --rm -net Dude alpine nslookup search
+
+docker container run --rm  --net Dude centos curl -s search:9200
+
+
+
+Container Images
+
+What is an Image(And what isn't)
+
+Its an application binaries and dependencies for the app and the metadata on how to run it.
+ 
+Official Definition: An image is an ordered collection of root filesystem changes and the corresponding execution parameters for
+use within a container runtime.
+
+Inside an image there is no complete OS, there is no kernel, no kernel modules(e.g drivers)
+
+It contains just the binaries that the application needs because the host provides the kernel
+
+The Image is very small, it can be a single file(Small as one file (the app binary) like a golang static binary)
+
+for instance, using Go, one of Go's features is that it can build a static binary and have a single file as your application
+
+or we can have a very big image thats actually using some distribution like Ubuntu with its own package manager built in, and where we installed
+Apache, and PHP, and the source code and all the all the added modules we need. It can be in GB's
+
+
+Docker hub registry images:
+
+It is good to use official Images.
+
+the official images are maintained and documented correctly and the versions also will be updated regularly.
+
+The Versions are the common features of official repositories.
+
+When we start to talk about image it not named they are tagged.
+
+A version of an image can actullay have more than one tag.
+
+The image ID is based upon the cryptograpic SHA of each image in Docker Hub
+
+
+Images and Their Layers:
+
+Images are designed using the union file system concept of making layers about the changes.
+
+"Docker image history <image>"
+
+shows the layers if changes made in image.
+
+When we run the command it actually shows some list, which is not as list of things that have actually happened in the container
+because this is about an image.
+
+It is a history of image layers.
+
+Every image starts from the very beginning with a blank layer known as scratch.
+
+Then every set of change that happens after that on the file system, in the image, is another layer.
+
+it might have one layer, you might have dozens of layers and some layers maybe no change in terms of file size.
+
+and we can also notice that the image can have a change that was simply a metadata change about which command we are actually going
+to run.
 
 
 
