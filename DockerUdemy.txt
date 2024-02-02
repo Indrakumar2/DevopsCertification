@@ -402,11 +402,57 @@ Every image starts from the very beginning with a blank layer known as scratch.
 
 Then every set of change that happens after that on the file system, in the image, is another layer.
 
-it might have one layer, you might have dozens of layers and some layers maybe no change in terms of file size.
+it might have one layer, it might have dozens of layers and some layers maybe no change in terms of file size.
 
 and we can also notice that the image can have a change that was simply a metadata change about which command we are actually going
 to run.
 
+When we are creating a new image it will starts with one layer...
+
+Every layer in an image gets its own unique SHA ID that helps the system to identify, if that layer is the same or another layer
+
+if we are create a two image with same base immage then changes made in those images will be maintained on the top of the same base layer.
+
+so this eliminates the creation of additional layers for the existing base image an using cache.
+
+This is the fundamental concept of the cache which saves a bunch of time and space.
+
+docker knows how to match the difference between the dockerhub registry and the local cache.
+
+As we make changes in the image it creates more layers.
+
+one of the benifits of the syste, that we are never storing the same image data more than once on our file system.
+
+It also reduces the necessity of dowloading and uploading the samw layers already we have on the other side.
+
+for creating custom images and if we are creating two websites A & Website B using same base image then we will ended up with two 
+different images
+
+How the image run as container:
+
+Suppose if we have an image and we decide to run a container off of it, then docker does it by creating a new Read/Write layer for that
+container on top of the base image.
+
+when we perusing the file system and these things, all the container and images look like regular file system, but underneath
+the storage driver that used by the docker it is actually layering all the changes on top of each other.
+
+so if we ran two containers using same base image in terms of the file space , there would only be the differencing between whats
+happened on that live container running and whats is happening in the base image, which is read only.
+
+Bottom line is if we are running containers and changing files that were coming through the image and if we change a file that was in the running
+container.This is known as Copy on Write 
+
+COW--> Copy On Write:
+
+What it does is if we make change in the file sytem in the image it will take that file out of the image and copy it into the differencing of the
+image and store copy of the file in that container layer.
+
+
+Image Inspect:
+
+Docker image inspect <image ID>--> returns JSON metadata about the image.
+
+It actually returns the metadata of the images and the default configurations.
 
 
 
