@@ -454,6 +454,82 @@ Docker image inspect <image ID>--> returns JSON metadata about the image.
 
 It actually returns the metadata of the images and the default configurations.
 
+it has the details& Configurations of image which can run in default mode.
+
+
+Image tagging and pushing to Docker Hub:
+
+"Dokcer image tag" -----> assign one or more tags to image
+
+Images don't technically have name.
+
+The repository is made up of user name or the organization name slash repo
+
+Official Repositories : they live at the "roof namespace" of the registry, so they don't need to account name front of repo name.
+ 
+The tag is for pointing to specific image commit and it could be anything, into that Repo.
+
+suppose if an image is pulled from registry which has two or more tags an in the host we have pulled,
+one of the tagged image then if we try to pull another image which has another tag with same repo then 
+docker knew that the based in the image ID , the image is already in the cache, if we pulled that tag we can see
+the two same images with different tags but with same image ID so the pull is not stored twice in the cache again.
+
+So these tags are the labels that point to an actual image ID and we can have many of them all point to the same one.
+
+we can also retag existing image, the command as below
+
+"Dokcer image tag<image that we are going to give new tag>/<the actual new tag that we want to give to it>" if tag is not provided,
+it will point the latest version of software.
+
+"Latest"---> it's just the default tag, but image owners should assign it to the newest stable version.
+
+"Docker image push"----> uploads changed layers to a image registry.
+
+"Docker login <server>"----> defaults to logging in HUB, but it can overrided by adding server URL.
+
+how docker does this? ,when ever we try to login in hub, well actually it will have local authentication key in config.json 
+file that will allow the local docker CLI to access docker hub.
+
+"Docker logout"-----> always logout from shared machines or servers when done, to protect the account.
+
+
+Building Images: The dockerfile basics
+
+Docker is not like shell script or batch file,
+
+FROM command: It is normally a minimal distibution reason for using this to save time, because these minimal,
+distributions are much smaller than CD's we would actually use Vm from them.
+
+Package manager: PMs like apt and yum are one of the reasons to build containers
+
+FROM Debian, Ubuntu, Fedora or CentOS
+
+ENV--> Environment Variabels: which are actually important in containers because they are the main way we set keys and values
+for container building and for running containers
+
+One Reason they are chosen as preffered way to inject key/value is they work everywhere, on ever OS config.
+
+RUN--->executing shell commands inside the container as it building.
+
+ adding "&&"(double ampherstand) is to chain the shell command to reduce the number layers created while building the image.
+
+EXPOSE ----> by default bo TCP or UDP ports are open inside the container.
+it does not expose anything from the container to a virtual network unless we list it here.
+
+CMD--->this is the final command that will be running every time when we launch a new container from the image, or 
+everytime you restart a stopped container.
+
+Ordering the Dockerfile
+when we are creating a dockerfile we need to keep the most commands that changes less operations and at the bottom we can run operations that do more.
+
+Extending official images:
+
+
+ 
+
+
+
+
 
 
 
