@@ -13,7 +13,7 @@ means it will run everywhere, and it runs on anything, as long is running linux 
 
 DockerFile:
 A Dockerfile is a set of instructions to make a container image. The Docker image specification was so popular it's now a standard,
-Known as OCR image standard.
+Known as OCI image standard.
 
 Every Docker file starts with FROM instruction, it can be start with someone else's image. 
 we can also have many images from many FROM's.
